@@ -7,7 +7,7 @@ document.getElementById("registerForm")?.addEventListener("submit", function(e) 
     const confirm = document.getElementById("regConfirm").value;
 
     if (password !== confirm) return alert("Passwords do not match!");
-    if (localStorage.getItem(email)) return alert("User already exists!");
+    if (localStorage.getItem(email)) return alert("User already exists!, Go to Login Page");
 
     const user = { name, email, password };
     localStorage.setItem(email, JSON.stringify(user));
