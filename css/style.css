@@ -93,6 +93,7 @@ body{
 body,
 button,
 input{
+    margin-top: 1rem;
   font-family: var(--body-font);
   font-size: var(--normal-font);
   font-weight: var(--font-regular);
@@ -910,3 +911,13 @@ img{
 
 }
 }
+
+.full-menu-btn{
+    border-radius: 5rem;
+    background-color: #C87E4F;
+    color: white;
+    margin-top: 2rem;
+    width: 15rem;
+    height: 3rem;
+    border: none;
+  }
