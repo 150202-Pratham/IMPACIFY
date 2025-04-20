@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Coffee</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container flex">
+            <a href="index.html" class="logo-content flex">
+                <i class='bx bx-coffee logo-icon'></i>
+                <span class="logo-text">Coffee.</span>
+            </a>
+        </nav>
+    </header>
+    <main class="container" style="margin-top:100px;">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email" required><br><br>
+            <input type="password" id="loginPassword" placeholder="Password" required><br><br>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="register.html">Register</a></p>
+        </form>
+    </main>
+    <script src="js/auth.js"></script>
+</body>
+</html>
