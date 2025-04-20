@@ -145,3 +145,36 @@
     font-size: var(--small-font);
     color: var(--text-color-light);
 }
+
+/* Swiper Overrides */
+.feedback .swiper-navBtn {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 4rem;
+    width: 4rem;
+    color: var(--text-color);
+}
+
+.feedback .swiper-button-next {
+    right: 2rem;
+    transform: translateY(2rem);
+}
+
+.feedback .swiper-button-prev {
+    left: 2rem;
+    transform: translateY(2rem);
+}
+
+.feedback .swiper-navBtn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.feedback .swiper-pagination-bullet {
+    background-color: var(--text-color-light);
+    opacity: 1;
+    height: 1rem;
+    width: 1rem;
+}
+
+.feedback .swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+}
