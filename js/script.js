@@ -23,7 +23,7 @@ const body = document.querySelector('body'),
 if(navMenu && navOpenBtn){
   navOpenBtn.addEventListener("click", () =>{
     navMenu.classList.add("open");
-    body.style.overflowY = "hidden";
+    body.style.overflowY = "hidden"
   })
 }
 
