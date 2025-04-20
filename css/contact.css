@@ -178,3 +178,58 @@
 .feedback .swiper-pagination-bullet-active {
     background-color: var(--primary-color);
 }
+
+* Responsive Adjustments */
+@media screen and (max-width: 990px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+    }
+
+    .contact-container,
+    .feedback-container {
+        padding: 7rem 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-details {
+        justify-items: center;
+        text-align: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+
+    .contact-form .content-subtitle {
+        text-align: center;
+    }
+
+    .contact-form .button {
+        justify-self: center;
+    }
+
+    .feedback .swiper-navBtn {
+        visibility: hidden;
+    }
+
+    .feedback .swiper-pagination-bullet {
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form-input {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .feedback-card {
+        padding: 2rem;
+    }
+
+    .feedback-img {
+        height: 100px;
+        width: 100px;
+    }
+}
