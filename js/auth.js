@@ -22,7 +22,7 @@ document.getElementById("loginForm")?.addEventListener("submit", function(e) {
     const password = document.getElementById("loginPassword").value;
 
     const user = JSON.parse(localStorage.getItem(email));
-    if (!user || user.password !== password) return alert("Invalid credentials!");
+    if (!user || user.password !== password) return alert("Invalid Credentials!, try again");
     
     alert("Login successful!");
     window.location.href = "index.html";
