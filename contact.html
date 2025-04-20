@@ -218,6 +218,38 @@
         </div>
         <div class="footer-copyRight">© CodingLab. All rights reserved</div>
     </footer>
+
+    <!-- Scroll Up -->
+    <a href="#contact" class="scrollUp-btn flex">
+        <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
+    </a>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+    <!-- Scroll Reveal for Feedback Cards -->
+    <script>
+        ScrollReveal().reveal('.feedback-card', {
+            duration: 1000,
+            distance: '30px',
+            origin: 'bottom',
+            opacity: 0,
+            easing: 'ease-in-out',
+            delay: 100,
+            interval: 200,
+            reset: false
+        });
+    </script>
+
+    <!-- Scroll to top on page load -->
+    <script>
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+    </script>
         
 </body>
 </html>
