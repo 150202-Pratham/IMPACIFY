@@ -662,11 +662,21 @@ input::placeholder, textarea::placeholder {
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
 }
 
 .customize-toggle:hover {
     background: var(--secondary-color);
     color: var(--white);
+}
+
+.customize-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.customize-toggle.active i {
+    transform: rotate(180deg);
 }
 
 .customization-panel {
@@ -676,10 +686,22 @@ input::placeholder, textarea::placeholder {
     background: var(--white);
     border-radius: 8px;
     box-shadow: 0 2px 8px var(--shadow-color);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .customization-panel.active {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Make sure the panel is visible when active */
+.customize-section.active .customization-panel {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .custom-option {
