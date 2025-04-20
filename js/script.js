@@ -89,3 +89,40 @@ window.addEventListener("scroll", () => {
 
 sr.reveal(`.about-imageContent, .menu-items`, {origin: 'left'})
 sr.reveal(`.about-details, .time-table`, {origin: 'right'})
+
+// Drink Customization Toggle
+document.querySelectorAll('.customize-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function() {
+        const panel = this.nextElementSibling;
+        panel.classList.toggle('active');
+        
+        // Update button text
+        const icon = this.querySelector('i');
+        if (panel.classList.contains('active')) {
+            icon.classList.remove('fa-sliders-h');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-sliders-h');
+        }
+    });
+});
+
+// Extra Shots Counter
+document.querySelectorAll('.shots-counter').forEach(counter => {
+    const minusBtn = counter.querySelector('.minus');
+    const plusBtn = counter.querySelector('.plus');
+    const countDisplay = counter.querySelector('span');
+    
+    minusBtn.addEventListener('click', () => {
+        let count = parseInt(countDisplay.textContent);
+        if (count > 0) {
+            countDisplay.textContent = count - 1;
+        }
+    });
+    
+    plusBtn.addEventListener('click', () => {
+        let count = parseInt(countDisplay.textContent);
+        countDisplay.textContent = count + 1;
+    });
+});
