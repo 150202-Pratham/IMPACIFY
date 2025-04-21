@@ -141,3 +141,10 @@
   .contact-form {
     max-width: 500px;
   }
+
+
+@media screen and (max-width: 600px) {
+    .form-input {
+        padding: 1.2rem 1.5rem;
+    }
+}
