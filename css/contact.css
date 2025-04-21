@@ -62,3 +62,14 @@
     background-color: #C2703D;
 }
 
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .contact-form .content-subtitle {
+        text-align: center;
+    }
+
+    .contact-form .button {
+        justify-self: center;
+    }
+}
+
