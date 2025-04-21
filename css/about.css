@@ -181,7 +181,7 @@ body {
 .container_about_illustrations img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px; /* Optional: Rounded corners for the image */
+  border-radius: 10px; 
   
 }
 
@@ -211,13 +211,13 @@ body {
   font-size: 3rem; 
   color: var(--navbar-color); 
   font-weight: bold; 
-  text-align: center; /* Center the heading */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-  margin-bottom: 1rem; /* Add spacing below the heading */
+  text-align: center; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+  margin-bottom: 1rem; 
 }
 .highlight {
-  color: var(--native-color); /* A different highlight color */
-  font-style: italic; /* Optional: Italicize the text */
+  color: var(--native-color); 
+  font-style: italic; 
 }
 
 
