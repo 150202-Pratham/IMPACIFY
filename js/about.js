@@ -1,10 +1,43 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const options = {
-        strings: ["a place to relax.", "a coffee lover's paradise.", "where moments are brewed."],
-        typeSpeed: 50,
-        backSpeed: 30,
-        loop: true,
-    };
+const scrollUpBtn = document.querySelector('.scrollUp-btn');
 
-    const typed = new Typed(".js-text-animation", options);
+// Show the button when scrolling down
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollUpBtn.classList.add('scrollUpBtn-active');
+    } else {
+        scrollUpBtn.classList.remove('scrollUpBtn-active');
+    }
+});
+
+// Scroll to the top when the button is clicked
+scrollUpBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+});
+
+
+
+
+// scroll reveral files 
+
+ScrollReveal().reveal('.container_about_text', {
+    duration: 1000,
+    distance: '30px',
+    origin: 'left',
+    opacity: 0,
+    easing: 'ease-in-out',
+    delay: 100,
+    reset: false,
+});
+
+ScrollReveal().reveal('.container_about_illustrations', {
+    duration: 1000,
+    distance: '30px',
+    origin: 'right',
+    opacity: 0,
+    easing: 'ease-in-out',
+    delay: 200,
+    reset: false,
 });
