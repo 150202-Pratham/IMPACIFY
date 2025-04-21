@@ -175,6 +175,8 @@ img{
   width: 100%;
   z-index: var(--z-fixed);
   transition: var(--tran-0-5);
+  padding: 0px;
+  margin: 0px;
 }
 .header-active{
   height: 6rem;
