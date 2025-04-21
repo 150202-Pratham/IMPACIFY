@@ -111,11 +111,11 @@ body {
         display: block;
         font-size: 2rem;
         cursor: pointer;
-        color: var(--navbar-color); /* Adjust color as needed */
+        color: var(--navbar-color); 
     }
 
     .menu-content.active {
-      display: flex; /* Show the menu when active */
+      display: flex; 
       flex-direction: column;
       position: absolute;
       top: 100%;
@@ -137,12 +137,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background-color: #f9f9f9; /* Background color for the section */
-  margin-top: 7rem; /* To avoid overlap with the fixed header */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  background-color: #f9f9f9; 
+  margin-top: 7rem; 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
   border-radius: 10px;
-  width: 90%; /* Decrease the width to 80% of the parent container */
-  margin-left: auto; /* Center the container horizontally */
+  width: 90%; 
+  margin-left: auto; 
   margin-right: auto;
   height: 400px;
 }
@@ -346,7 +346,7 @@ body {
 
 .button {
   padding: 0.8rem 1.5rem;
-  background-color: #6F4337;
+  background-color: var(--navbar-color);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -444,7 +444,7 @@ body {
 
 .button {
   padding: 0.8rem 1.5rem;
-  background-color: #6F4337;
+  background-color: var(--navbar-color);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -454,7 +454,7 @@ body {
 }
 
 .button:hover {
-  background-color: #ff6f61;
+  background-color: var(--native-color);
 }
 
 /* Scroll Reveal Animation */
