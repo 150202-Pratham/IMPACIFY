@@ -181,3 +181,178 @@ body {
       width: 80%; /* Adjust image size for smaller screens */
   }
 }
+
+
+/* about us Section  */
+.container_about_text h1 {
+  font-size: 3.5rem; /* Larger font size for the heading */
+  font-family: 'Georgia', serif; /* Different font family for the heading */
+  font-size: 3rem; /* Increase the font size */
+  color: #6F4337; /* Highlight color for the heading */
+  font-weight: bold; /* Make the text bold */
+  text-align: center; /* Center the heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  margin-bottom: 1rem; /* Add spacing below the heading */
+}
+.highlight {
+  color: #ff6f61; /* A different highlight color */
+  font-style: italic; /* Optional: Italicize the text */
+}
+
+
+
+/* section 2 About us Page */
+
+/* Second Section Styling */
+.section.about {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9; /* Light background color */
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.about-imageContent {
+  flex: 1;
+  position: relative;
+}
+
+.about-img {
+  width: 80%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px; /* Rounded corners for the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+  margin: 0 auto;
+}
+
+.aboutImg-textBox {
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+  transform: translateX(-20%);
+}
+
+.heart-icon {
+  font-size: 2rem;
+  color: #ff6f61; /* Highlight color for the heart icon */
+  margin-bottom: 0.5rem;
+}
+
+.content-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.about-details {
+  flex: 1;
+}
+
+.about-text .content-subtitle {
+  font-size: 1.5rem;
+  color: #6F4337; /* Highlight color for the subtitle */
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.about-text .content-title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.about-text .content-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.about-lists {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.about-list {
+  font-size: 1rem;
+  color: #6F4337;
+  font-weight: bold;
+}
+
+.about-list.dot {
+  font-size: 1.5rem;
+  color: #6F4337;
+}
+
+.about-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.8rem 1.5rem;
+  background-color: #6F4337;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ff6f61;
+}
+
+.about-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #6F4337;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.about-link:hover .about-arrowIcon {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+.about-arrowIcon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .about-imageContent {
+      margin-bottom: 2rem;
+  }
+
+  .about-buttons {
+      justify-content: center;
+  }
+}
