@@ -268,7 +268,7 @@ body {
 
 .heart-icon {
   font-size: 2rem;
-  color: #ff6f61; /* Highlight color for the heart icon */
+  color: var(--native-color);
   margin-bottom: 0.5rem;
 }
 
@@ -331,11 +331,11 @@ body {
 
 }
 .about-list:hover {
-  color: #ff6f61; 
+  color: var(--native-color); 
 }
 
 .about-list.dot:hover {
-  color: #ff6f61; 
+  color: var(--native-color); 
 }
 
 .about-buttons {
@@ -356,7 +356,7 @@ body {
 }
 
 .button:hover {
-  background-color: #ff6f61;
+  background-color: var(--native-color);
 }
 
 .about-link {
@@ -364,7 +364,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: #6F4337;
+  color: var(--navbar-color);
   font-size: 1rem;
   font-weight: bold;
 }
@@ -420,7 +420,7 @@ body {
 .quote {
   font-size: 1.5rem;
   font-style: italic;
-  color: #6F4337; /* Coffee-themed color */
+  color: var(--navbar-color); 
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0;
