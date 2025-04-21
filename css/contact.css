@@ -29,3 +29,36 @@
     transition: border-color 0.3s;
     outline: none;
 }
+
+
+.form-input:focus {
+    border-color: #C87E4F;
+}
+
+.form-input::placeholder {
+    color: #888682;
+}
+
+.form-input[type="textarea"] {
+    border-radius: 1rem;
+    resize: vertical;
+}
+
+.contact-form .button {
+    justify-self: start;
+    border: none;
+    outline: none;
+    color: #FFF;
+    padding: 1.4rem 4rem;
+    border-radius: 3rem;
+    background-color: #C87E4F;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form .button:hover {
+    background-color: #C2703D;
+}
+
