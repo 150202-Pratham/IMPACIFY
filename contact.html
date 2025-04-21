@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/contact.css">
-
     <!-- Scroll Reveal -->
     <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
 </head>
@@ -26,18 +25,15 @@
         <nav class="nav container flex">
             <a href="index.html" class="logo-content flex">
                 <i class='bx bx-coffee logo-icon'></i>
-                <span class="logo-text">Coffee.</span>
+                <span class="logo-text">Coffee Havan</span>
             </a>
-
             <div class="menu-content">
                 <ul class="menu-list flex">
-                    <li><a href="index.html#home" class="nav-link">home</a></li>
-                    <li><a href="index.html#about" class="nav-link">about</a></li>
-                    <li><a href="menu.html" class="nav-link">menu</a></li>
-                    <li><a href="index.html#review" class="nav-link">review</a></li>
-                    <li><a href="contact.html" class="nav-link active-navlink">contact</a></li>
+                    <li><a href="./index.html" class="nav-link">home</a></li>
+                    <li><a href="./about.html" class="nav-link">about</a></li>
+                    <li><a href="./Menu.html" class="nav-link active-navlink">menu</a></li>
+                    <li><a href="./contact.html" class="nav-link">Review & Contact</a></li>
                 </ul>
-
                 <div class="media-icons flex">
                     <a href="https://www.facebook.com"><i class='bx bxl-facebook'></i></a>
                     <a href="https://twitter.com/i/flow/login"><i class='bx bxl-twitter'></i></a>
@@ -45,15 +41,12 @@
                     <a href="https://github.com/login"><i class='bx bxl-github'></i></a>
                     <a href="https://www.youtube.com/login"><i class='bx bxl-youtube'></i></a>
                 </div>
-
                 <i class='bx bx-x navClose-btn'></i>
             </div>
-
             <div class="contact-content flex">
                 <i class='bx bx-phone phone-icon'></i>
                 <span class="phone-number">0022-0303-2030</span>
             </div>
-
             <i class='bx bx-menu navOpen-btn'></i>
         </nav>
     </header>
@@ -75,6 +68,7 @@
                     <div class="contact-details">
                         <div class="contact-info">
                             <h4 class="content-subtitle">Our Location</h4>
+                            <br>
                             <div class="footer-location flex">
                                 <i class='bx bx-map map-icon'></i>
                                 <div class="location-text">
@@ -82,18 +76,22 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
 
                         <div class="contact-info">
                             <h4 class="content-subtitle">Contact Information</h4>
+                            <br>
                             <div class="contact-item flex">
                                 <i class='bx bx-phone phone-icon'></i>
                                 <span class="phone-number">0022-0303-2030</span>
                             </div>
+                            <br>
                             <div class="contact-item flex">
                                 <i class='bx bx-envelope'></i>
                                 <span>coffee@example.com</span>
                             </div>
                         </div>
+                        <br>
 
                         <div class="contact-info">
                             <h4 class="content-subtitle">Follow Us</h4>
@@ -126,51 +124,52 @@
             </div>
         </section>
 
-        <!-- Feedback Section -->
-        <section class="section feedback">
-            <div class="feedback-container container">
-                <div class="feedback-text">
-                    <h4 class="section-subtitle"><i>Your Feedback</i></h4>
-                    <h2 class="section-title">Share Your Experience</h2>
-                    <p class="section-description">
-                        Your feedback helps us improve! Let us know about your visit or share your thoughts about our coffee and services.
-                    </p>
-                </div>
-
-                <div class="feedback-content swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="feedback-card swiper-slide">
-                            <img src="images/profileImg1.jpg" alt="" class="feedback-img">
-                            <p class="feedback-quote">"The coffee here is exceptional, and the cozy atmosphere makes it my favorite spot to relax!"</p>
-                            <i class='bx bxs-quote-alt-left quote-icon'></i>
-                            <div class="feedback-personDetails flex">
-                                <span class="name">Sarah Johnson</span>
-                                <span class="job">Graphic Designer</span>
-                            </div>
-                        </div>
-                        <div class="feedback-card swiper-slide">
-                            <img src="images/profileImg2.jpg" alt="" class="feedback-img">
-                            <p class="feedback-quote">"I love the variety of drinks and the friendly staff. Highly recommend the Matcha Latte!"</p>
-                            <i class='bx bxs-quote-alt-left quote-icon'></i>
-                            <div class="feedback-personDetails flex">
-                                <span class="name">Michael Lee</span>
-                                <span class="job">Freelancer</span>
-                            </div>
-                        </div>
-                        <div class="feedback-card swiper-slide">
-                            <img src="images/profileImg3.jpg" alt="" class="feedback-img">
-                            <p class="feedback-quote">"The croissants are to die for, and the service is always top-notch!"</p>
-                            <i class='bx bxs-quote-alt-left quote-icon'></i>
-                            <div class="feedback-personDetails flex">
-                                <span class="name">Emily Davis</span>
-                                <span class="job">Teacher</span>
-                            </div>
-                        </div>
+        <!-- Reviews Section -->
+        <section class="section review" id="review">
+            <div class="review-container container">
+                    <div class="review-text">
+                            <h4 class="section-subtitle"><i>Reviews</i></h4>
+                            <h2 class="section-title">What Clients Says</h2>
+                            <p class="section-description">Some reviews that customer said about coffee services and business Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt magnam totam repellat, labore commodi exercitationem!</p>
                     </div>
-                    <div class="swiper-button-next swiper-navBtn"></div>
-                    <div class="swiper-button-prev swiper-navBtn"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
+
+                    <div class="tesitmonial swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                    <div class="testi-content swiper-slide flex">
+                                            <img src="images/profileImg2.jpg" alt="" class="review-img">
+                                            <p class="review-quote">Your coffee hits the spot every time. Thank you for the experience of pure, delicious coffee masterfully roasted! I will never purchase any other and I will spread the word!</p>
+                                            <i class='bx bxs-quote-alt-left quote-icon'></i>
+
+                                            <div class="testi-personDetails flex">
+                                                    <span class="name">Marnie Rotter</span>
+                                                    <span class="job">App Developer</span>
+                                            </div>
+                                    </div>
+                                    <div class="testi-content swiper-slide flex">
+                                            <img src="images/profileImg1.jpg" alt="" class="review-img">
+                                            <p class="review-quote">Your coffee hits the spot every time. Thank you for the experience of pure, delicious coffee masterfully roasted! I will never purchase any other and I will spread the word!</p>
+                                            <i class='bx bxs-quote-alt-left quote-icon'></i>
+
+                                            <div class="testi-personDetails flex">
+                                                    <span class="name">Marnie Rotter</span>
+                                                    <span class="job">App Developer</span>
+                                            </div>
+                                    </div>
+                                    <div class="testi-content swiper-slide flex">
+                                            <img src="images/profileImg3.jpg" alt="" class="review-img">
+                                            <p class="review-quote">Your coffee hits the spot every time. Thank you for the experience of pure, delicious coffee masterfully roasted! I will never purchase any other and I will spread the word!</p>
+                                            <i class='bx bxs-quote-alt-left quote-icon'></i>
+
+                                            <div class="testi-personDetails flex">
+                                                    <span class="name">Marnie Rotter</span>
+                                                    <span class="job">App Developer</span>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next swiper-navBtn"></div>
+                                <div class="swiper-button-prev swiper-navBtn"></div>
+                                <div class="swiper-pagination"></div>
+                    </div>
             </div>
         </section>
     </main>
