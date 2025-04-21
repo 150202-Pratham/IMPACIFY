@@ -10,7 +10,7 @@
     width: 100%;
     z-index: 1000; /* Ensure navbar stays above other content */
     background-color: var(--white-color); /* Match site background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     color: black;
 }
 
@@ -80,25 +80,44 @@
     text-decoration: line-through;
 }
 
-
 .header, .bx {
-    background-color: var(--white-color); /* Ensure solid background */
-    color: var(--text-color); /* Ensure text is visible */
+    background-color: var(--white-color); 
+    color: #C2703D;
 }
 
 .nav-link, .logo-text, .phone-number {
-    color: var(--text-color); /* Ensure link and text colors are visible */
-}
-
-h1{
-   color: #C87E4F;
-   margin-left: 22rem;
-
-}
-
-h1:hover{
     color: #C2703D;
 }
+
+h1 {
+    color: #C2703D;
+    margin-left: clamp(1rem, 5vw, 10rem); 
+    font-size: clamp(2.5rem, 5vw, 4rem); 
+    text-align: center; 
+}
+
+h1:hover {
+    color: #C87E4F;
+}
+
+
+.footer .logo-icon,
+.footer .map-icon {
+    background-color: transparent !important;
+}
+
+
+.header.header-active .nav-link,
+.header.header-active .logo-text,
+.header.header-active .phone-number,
+.header.header-active .logo-icon,
+.header.header-active .phone-icon,
+.header.header-active .navClose-btn,
+.header.header-active .navOpen-btn,
+.header.header-active .media-icons a .bx {
+    color: #C2703D !important;
+}
+
 
 @media screen and (max-width: 600px) {
     .menu-grid {
@@ -107,4 +126,9 @@ h1:hover{
     .menu-card img {
         height: 150px;
     }
+    h1 {
+        margin-left: 0;
+        font-size: clamp(1.8rem, 4vw, 2.5rem); 
+    }
 }
+

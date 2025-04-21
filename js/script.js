@@ -89,3 +89,56 @@ window.addEventListener("scroll", () => {
 
 sr.reveal(`.about-imageContent, .menu-items`, {origin: 'left'})
 sr.reveal(`.about-details, .time-table`, {origin: 'right'})
+
+// Drink Customization Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing customization...');
+    
+    const customizeToggles = document.querySelectorAll('.customize-toggle');
+    console.log('Found customize toggles:', customizeToggles.length);
+
+    customizeToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            console.log('Toggle clicked');
+            const section = this.closest('.customize-section');
+            const panel = this.nextElementSibling;
+            
+            // Toggle active state on both the section and panel
+            section.classList.toggle('active');
+            panel.classList.toggle('active');
+            this.classList.toggle('active');
+            
+            // Update button icon
+            const icon = this.querySelector('i');
+            if (section.classList.contains('active')) {
+                icon.classList.remove('fa-sliders-h');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-sliders-h');
+            }
+        });
+    });
+
+    // Extra Shots Counter
+    const shotCounters = document.querySelectorAll('.shots-counter');
+    console.log('Found shot counters:', shotCounters.length);
+
+    shotCounters.forEach(counter => {
+        const minusBtn = counter.querySelector('.minus');
+        const plusBtn = counter.querySelector('.plus');
+        const countDisplay = counter.querySelector('span');
+        
+        minusBtn.addEventListener('click', () => {
+            let count = parseInt(countDisplay.textContent);
+            if (count > 0) {
+                countDisplay.textContent = count - 1;
+            }
+        });
+        
+        plusBtn.addEventListener('click', () => {
+            let count = parseInt(countDisplay.textContent);
+            countDisplay.textContent = count + 1;
+        });
+    });
+});
