@@ -6,7 +6,9 @@
 :root{
 
   --navbar-color : #6F4337 ;
-  --section-color:  #2C3034
+  --section-color:  #2C3034 ;
+  --native-color :  #ff6f61;
+
 }
 body {
   font-family: 'Arial', sans-serif;
@@ -75,7 +77,8 @@ body {
 
 .nav-link:hover,
 .active-navlink {
-  color: #ff6f61;
+  color:var(--native-color);
+
 }
 
 .contact-content {
@@ -108,11 +111,11 @@ body {
         display: block;
         font-size: 2rem;
         cursor: pointer;
-        color: var(--navbar-color); /* Adjust color as needed */
+        color: var(--navbar-color); 
     }
 
     .menu-content.active {
-      display: flex; /* Show the menu when active */
+      display: flex; 
       flex-direction: column;
       position: absolute;
       top: 100%;
@@ -134,12 +137,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background-color: #f9f9f9; /* Background color for the section */
-  margin-top: 7rem; /* To avoid overlap with the fixed header */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  background-color: #f9f9f9; 
+  margin-top: 7rem; 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
   border-radius: 10px;
-  width: 90%; /* Decrease the width to 80% of the parent container */
-  margin-left: auto; /* Center the container horizontally */
+  width: 90%; 
+  margin-left: auto; 
   margin-right: auto;
   height: 400px;
 }
@@ -165,7 +168,7 @@ body {
 .js-text-animation {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ff6f61; /* Highlight color for animated text */
+  color: var(--native-color); 
 }
 
 .container_about_illustrations {
@@ -178,7 +181,7 @@ body {
 .container_about_illustrations img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px; /* Optional: Rounded corners for the image */
+  border-radius: 10px; 
   
 }
 
@@ -203,18 +206,18 @@ body {
 
 /* about us Section  */
 .container_about_text h1 {
-  font-size: 3.5rem; /* Larger font size for the heading */
-  font-family: 'Georgia', serif; /* Different font family for the heading */
-  font-size: 3rem; /* Increase the font size */
-  color: #6F4337; /* Highlight color for the heading */
-  font-weight: bold; /* Make the text bold */
-  text-align: center; /* Center the heading */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-  margin-bottom: 1rem; /* Add spacing below the heading */
+  font-size: 3.5rem; 
+  font-family: 'Georgia', serif; 
+  font-size: 3rem; 
+  color: var(--navbar-color); 
+  font-weight: bold; 
+  text-align: center; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+  margin-bottom: 1rem; 
 }
 .highlight {
-  color: #ff6f61; /* A different highlight color */
-  font-style: italic; /* Optional: Italicize the text */
+  color: var(--native-color); 
+  font-style: italic; 
 }
 
 
@@ -224,7 +227,7 @@ body {
 /* Second Section Styling */
 .section.about {
   padding: 4rem 2rem;
-  background-color: #f9f9f9; /* Light background color */
+  background-color: #f9f9f9; 
   max-width: 90%;
   margin: 0 auto;
 }
@@ -234,7 +237,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  flex-wrap: wrap; /* Ensure responsiveness */
+  flex-wrap: wrap; 
 }
 
 .about-imageContent {
@@ -246,8 +249,8 @@ body {
   width: 80%;
   height: 400px;
   object-fit: cover;
-  border-radius: 10px; /* Rounded corners for the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   margin: 0 auto;
 }
 
@@ -255,17 +258,17 @@ body {
   position: absolute;
   bottom: -5%;
   left: 50%;
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  background-color: rgba(255, 255, 255, 0.9); 
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   text-align: center;
   transform: translateX(-10%);
 }
 
 .heart-icon {
   font-size: 2rem;
-  color: #ff6f61; /* Highlight color for the heart icon */
+  color: var(--native-color);
   margin-bottom: 0.5rem;
 }
 
@@ -328,11 +331,11 @@ body {
 
 }
 .about-list:hover {
-  color: #ff6f61; 
+  color: var(--native-color); 
 }
 
 .about-list.dot:hover {
-  color: #ff6f61; 
+  color: var(--native-color); 
 }
 
 .about-buttons {
@@ -343,7 +346,7 @@ body {
 
 .button {
   padding: 0.8rem 1.5rem;
-  background-color: #6F4337;
+  background-color: var(--navbar-color);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -353,7 +356,7 @@ body {
 }
 
 .button:hover {
-  background-color: #ff6f61;
+  background-color: var(--native-color);
 }
 
 .about-link {
@@ -361,7 +364,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: #6F4337;
+  color: var(--navbar-color);
   font-size: 1rem;
   font-weight: bold;
 }
@@ -417,7 +420,7 @@ body {
 .quote {
   font-size: 1.5rem;
   font-style: italic;
-  color: #6F4337; /* Coffee-themed color */
+  color: var(--navbar-color); 
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0;
@@ -441,7 +444,7 @@ body {
 
 .button {
   padding: 0.8rem 1.5rem;
-  background-color: #6F4337;
+  background-color: var(--navbar-color);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -451,7 +454,7 @@ body {
 }
 
 .button:hover {
-  background-color: #ff6f61;
+  background-color: var(--native-color);
 }
 
 /* Scroll Reveal Animation */
