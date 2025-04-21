@@ -328,11 +328,11 @@ body {
 
 }
 .about-list:hover {
-  color: #ff6f61; /* Change color on hover */
+  color: #ff6f61; 
 }
 
 .about-list.dot:hover {
-  color: #ff6f61; /* Change color of dots on hover */
+  color: #ff6f61; 
 }
 
 .about-buttons {
@@ -391,17 +391,17 @@ body {
       justify-content: center;
   }
   .about-lists {
-    flex-direction: column; /* Stack items vertically */
-    gap: 0.8rem; /* Increase spacing between items */
+    flex-direction: column; 
+    gap: 0.8rem; 
   }
 }
 
 
 /* section 3 started */
-/* Third Section Styling */
+
 .section.coffee-quotes {
   padding: 4rem 2rem;
-  background-color: #f9f9f9; /* Light background color */
+  background-color: #f9f9f9; 
   text-align: center;
   max-width: 90%;
   margin: 0 auto;
@@ -484,7 +484,7 @@ body {
 
 .footer {
   padding: 4rem 2rem 3rem;
-  background-color: #2C3034; /* Dark background color */
+  background-color: #2C3034; 
   color: #fff;
 }
 
