@@ -315,15 +315,15 @@ body {
 
 .about-list {
   font-size: 1rem;
-  color: #6F4337; /* Highlight color for the text */
+  color: var(--navbar-color);
   font-weight: bold;
 }
 
 .about-list.dot {
-  font-size: 1.5rem; /* Slightly larger size for the dots */
-  color: #6F4337; /* Highlight color for the dots */
-  line-height: 1; /* Ensure proper vertical alignment */
-  vertical-align: middle; /* Align the dots with the text */
+  font-size: 1.5rem; 
+  color: var(--navbar-color); 
+  line-height: 1; 
+  vertical-align: middle; 
   transition: color 0.3s ease
 
 }
