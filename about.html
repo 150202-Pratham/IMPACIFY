@@ -4,8 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About Us</title>
-       
-        
+    
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="css/scrollreveal.min.js">
         <link rel="stylesheet" href="css/swiper-bundle.min.css">
@@ -34,6 +33,9 @@
                     <div class="contact-content flex">
                         <i class='bx bx-phone phone-icon'></i>
                         <span class="phone-number">0022-0303-2030</span>
+                    </div>
+                    <div class="logout-btn">
+                        <a href="./login.html" class="button">Logout</a>
                     </div>
                     <i class='bx bx-menu navOpen-btn'></i>
                 </nav>
@@ -95,31 +97,102 @@
                                     </ul>
                             </div>
 
-                            <div class="about-buttons flex">
-                                    <button class="button">About Us</button>
-                                    <a href="#" class="about-link flex">
-                                            <span class="link-text">see more</span>
-                                            <i class='bx bx-right-arrow-alt about-arrowIcon'></i>
-                                    </a>
-                            </div>
+                            
                     </div>
 
             </div>
     </section>
 
 
+    <!-- Third Section: Coffee Quotations -->
+<section class="section coffee-quotes" id="quotes">
+    <div class="quotes-content container">
+        <blockquote class="quote">
+            <p class="quote-text">
+                "Coffee is a language in itself. It brings people together, one cup at a time."
+            </p>
+        </blockquote>
+        <blockquote class="quote">
+            <p class="quote-text">
+                "A morning without coffee is like sleep."
+            </p>
+        </blockquote>
+        <blockquote class="quote">
+            <p class="quote-text">
+                "Life happens, coffee helps."
+            </p>
+        </blockquote>
+        <div class="quote-action">
+            <h2 class="quote-heading">Let's brew something amazing together!</h2>
+            <button class="button" onclick="location.href='./contact.html'">Contact Us Now</button>
+        </div>
+    </div>
+</section>
 
 
-     
+<footer class="section footer">
+    <div class="footer-container container">
+        <div class="footer-content">
+            <a href="#" class="logo-content flex">
+                <i class='bx bx-coffee logo-icon'></i>
+                <span class="logo-text">Coffee Haven</span>
+            </a>
 
+            <p class="content-description">
+                Coffee Haven is a cafe that serves a variety of coffee and dishes in a cozy and comfortable environment.
+            </p>
 
-        <!-- Swiper JS -->
-        <script src="js/swiper-bundle.min.js"></script>
-        
-        <!-- Scroll Reveal -->
-        <script src="js/scrollreveal.js"></script>
-        
-        <!-- JavaScript -->
-            <script src="js/script.js"></script>
+            <div class="footer-location flex">
+                <i class='bx bx-map map-icon'></i>
+                <div class="location-text">
+                    USA, California, 65 South Fifth St. Sicklerville, NJ 08081
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-linkContent">
+            <ul class="footer-links">
+                <h4 class="footerLinks-title">Facility</h4>
+                <li><a href="#" class="footer-link">Private Room</a></li>
+                <li><a href="#" class="footer-link">Meeting Room</a></li>
+                <li><a href="#" class="footer-link">Event Room</a></li>
+                <li><a href="#" class="footer-link">Creative Studio</a></li>
+                <li><a href="#" class="footer-link">Custom Room</a></li>
+            </ul>
+            <ul class="footer-links">
+                <h4 class="footerLinks-title">Menu</h4>
+                <li><a href="#" class="footer-link">Coffee</a></li>
+                <li><a href="#" class="footer-link">Beverages</a></li>
+                <li><a href="#" class="footer-link">Dishes</a></li>
+            </ul>
+            <ul class="footer-links">
+                <h4 class="footerLinks-title">Support</h4>
+                <li><a href="#" class="footer-link">About Us</a></li>
+                <li><a href="#" class="footer-link">Contact</a></li>
+                <li><a href="#" class="footer-link">FAQs</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-copyRight">
+        <p>&copy; 2025 Coffee Haven. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Scroll Up -->
+<a href="#home" class="scrollUp-btn flex">
+    <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
+</a>
+
+<!-- Swiper JS -->
+<script src="js/swiper-bundle.min.js"></script>
+
+<!-- Scroll Reveal -->
+<script src="js/scrollreveal.js"></script>
+
+<!-- JavaScript -->
+ <script src="js/script.js"></script>
+
+<script src="./js/about.js"></script>
 </body>
 </html>

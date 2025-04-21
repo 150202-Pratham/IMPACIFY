@@ -207,6 +207,8 @@ body {
 .section.about {
   padding: 4rem 2rem;
   background-color: #f9f9f9; /* Light background color */
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .about-content {
@@ -240,7 +242,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-align: center;
-  transform: translateX(-20%);
+  transform: translateX(-10%);
 }
 
 .heart-icon {
@@ -257,6 +259,7 @@ body {
 
 .about-details {
   flex: 1;
+  margin-left: 1rem;
 }
 
 .about-text .content-subtitle {
@@ -283,21 +286,35 @@ body {
 
 .about-lists {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  align-items: center; /* Align items vertically */
+  transition: color 0.3s ease;
+  gap: 0.5rem; /* Add spacing between items */
+  flex-wrap: wrap; /* Ensure responsiveness */
   margin-bottom: 1.5rem;
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
 }
 
 .about-list {
   font-size: 1rem;
-  color: #6F4337;
+  color: #6F4337; /* Highlight color for the text */
   font-weight: bold;
 }
 
 .about-list.dot {
-  font-size: 1.5rem;
-  color: #6F4337;
+  font-size: 1.5rem; /* Slightly larger size for the dots */
+  color: #6F4337; /* Highlight color for the dots */
+  line-height: 1; /* Ensure proper vertical alignment */
+  vertical-align: middle; /* Align the dots with the text */
+  transition: color 0.3s ease
+
+}
+.about-list:hover {
+  color: #ff6f61; /* Change color on hover */
+}
+
+.about-list.dot:hover {
+  color: #ff6f61; /* Change color of dots on hover */
 }
 
 .about-buttons {
@@ -354,5 +371,9 @@ body {
 
   .about-buttons {
       justify-content: center;
+  }
+  .about-lists {
+    flex-direction: column; /* Stack items vertically */
+    gap: 0.8rem; /* Increase spacing between items */
   }
 }
