@@ -593,7 +593,7 @@ body {
   }
 }
 
-/* Scroll Up */
+
 .scrollUp-btn{
   position: fixed;
   bottom: -30%;
@@ -624,7 +624,7 @@ body {
 
 @media (max-width: 768px) {
   .scrollUp-btn {
-      right: 1rem; /* Adjust position for smaller screens */
+      right: 1rem; 
       bottom: 2rem;
       height: 2.5rem;
       width: 2.5rem;
