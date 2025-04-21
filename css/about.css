@@ -282,7 +282,7 @@ body {
 
 .about-text .content-subtitle {
   font-size: 1.5rem;
-  color: #6F4337; /* Highlight color for the subtitle */
+  color: var(--navbar-color);
   margin-bottom: 0.5rem;
   font-style: italic;
 }
@@ -304,12 +304,12 @@ body {
 
 .about-lists {
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center; 
   transition: color 0.3s ease;
-  gap: 0.5rem; /* Add spacing between items */
-  flex-wrap: wrap; /* Ensure responsiveness */
+  gap: 0.5rem; 
+  flex-wrap: wrap;
   margin-bottom: 1.5rem;
-  list-style-type: none; /* Remove default list styling */
+  list-style-type: none; 
   padding: 0;
 }
 
