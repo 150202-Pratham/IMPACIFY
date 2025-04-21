@@ -282,7 +282,7 @@ body {
 
 .about-text .content-subtitle {
   font-size: 1.5rem;
-  color: #6F4337; /* Highlight color for the subtitle */
+  color: var(--navbar-color);
   margin-bottom: 0.5rem;
   font-style: italic;
 }
@@ -304,35 +304,35 @@ body {
 
 .about-lists {
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center; 
   transition: color 0.3s ease;
-  gap: 0.5rem; /* Add spacing between items */
-  flex-wrap: wrap; /* Ensure responsiveness */
+  gap: 0.5rem; 
+  flex-wrap: wrap;
   margin-bottom: 1.5rem;
-  list-style-type: none; /* Remove default list styling */
+  list-style-type: none; 
   padding: 0;
 }
 
 .about-list {
   font-size: 1rem;
-  color: #6F4337; /* Highlight color for the text */
+  color: var(--navbar-color);
   font-weight: bold;
 }
 
 .about-list.dot {
-  font-size: 1.5rem; /* Slightly larger size for the dots */
-  color: #6F4337; /* Highlight color for the dots */
-  line-height: 1; /* Ensure proper vertical alignment */
-  vertical-align: middle; /* Align the dots with the text */
+  font-size: 1.5rem; 
+  color: var(--navbar-color); 
+  line-height: 1; 
+  vertical-align: middle; 
   transition: color 0.3s ease
 
 }
 .about-list:hover {
-  color: #ff6f61; /* Change color on hover */
+  color: #ff6f61; 
 }
 
 .about-list.dot:hover {
-  color: #ff6f61; /* Change color of dots on hover */
+  color: #ff6f61; 
 }
 
 .about-buttons {
@@ -391,17 +391,17 @@ body {
       justify-content: center;
   }
   .about-lists {
-    flex-direction: column; /* Stack items vertically */
-    gap: 0.8rem; /* Increase spacing between items */
+    flex-direction: column; 
+    gap: 0.8rem; 
   }
 }
 
 
 /* section 3 started */
-/* Third Section Styling */
+
 .section.coffee-quotes {
   padding: 4rem 2rem;
-  background-color: #f9f9f9; /* Light background color */
+  background-color: #f9f9f9; 
   text-align: center;
   max-width: 90%;
   margin: 0 auto;
@@ -484,7 +484,7 @@ body {
 
 .footer {
   padding: 4rem 2rem 3rem;
-  background-color: #2C3034; /* Dark background color */
+  background-color: #2C3034; 
   color: #fff;
 }
 
@@ -593,7 +593,7 @@ body {
   }
 }
 
-/* Scroll Up */
+
 .scrollUp-btn{
   position: fixed;
   bottom: -30%;
@@ -624,7 +624,7 @@ body {
 
 @media (max-width: 768px) {
   .scrollUp-btn {
-      right: 1rem; /* Adjust position for smaller screens */
+      right: 1rem; 
       bottom: 2rem;
       height: 2.5rem;
       width: 2.5rem;
