@@ -171,9 +171,13 @@
 }
 
 .container_about_illustrations img {
-  max-width: 100%;
+  max-width: 85%;
   height: auto;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.container_about_illustrations img:hover {
+  transform: scale(1.05);
 }
 
 /* Responsive Design for About Section */
