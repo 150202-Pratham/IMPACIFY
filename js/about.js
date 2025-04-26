@@ -25,9 +25,30 @@ navToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+// Mobile menu toggle
+const navOpenBtn = document.querySelector('.navOpen-btn');
+const navCloseBtn = document.querySelector('.navClose-btn');
+const menuContent = document.querySelector('.menu-content');
+
+navOpenBtn.addEventListener('click', () => {
+    menuContent.classList.add('active');
+});
+
+navCloseBtn.addEventListener('click', () => {
+    menuContent.classList.remove('active');
+});
+
+// Animation for quotes
+window.addEventListener('DOMContentLoaded', () => {
+    const quotes = document.querySelectorAll('.quote');
+    
+    quotes.forEach((quote, index) => {
+        quote.style.animationDelay = `${index * 0.2}s`;
+    });
+});
 
 
-// scroll reveral files 
+// scroll reveal effects
 
 ScrollReveal().reveal('.container_about_text', {
     duration: 1000,
@@ -46,5 +67,46 @@ ScrollReveal().reveal('.container_about_illustrations', {
     opacity: 0,
     easing: 'ease-in-out',
     delay: 200,
+    reset: false,
+});
+
+// Additional ScrollReveal effects
+ScrollReveal().reveal('.about-imageContent', {
+    duration: 1200,
+    distance: '40px',
+    origin: 'bottom',
+    opacity: 0,
+    easing: 'ease-in-out',
+    delay: 150,
+    reset: false,
+});
+
+ScrollReveal().reveal('.about-details', {
+    duration: 1200,
+    distance: '40px',
+    origin: 'top',
+    opacity: 0,
+    easing: 'ease-in-out',
+    delay: 250,
+    reset: false,
+});
+
+ScrollReveal().reveal('.quote', {
+    duration: 800,
+    distance: '20px',
+    origin: 'left',
+    opacity: 0,
+    easing: 'ease-in-out',
+    interval: 200,
+    reset: false,
+});
+
+ScrollReveal().reveal('.quote-action', {
+    duration: 1000,
+    distance: '30px',
+    origin: 'bottom',
+    opacity: 0,
+    easing: 'ease-in-out',
+    delay: 300,
     reset: false,
 });
