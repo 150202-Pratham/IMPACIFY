@@ -82,11 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
 const JSN = function htmlToJSON(element){
     const obj = {};
     let children = element.children; // passes an array to children containing all the nodes / children element of the div passed in the function arguments.
-    children.forEach(child=>{
-        if(child.classList.contains(".menu-card-title")){
+    Array.from(children).forEach(child=>{
+        if(child.classList.contains("menu-card-title")){
             obj.Item_Name = document.querySelector(".menu-card-title").innerHTML;
         }
-        if(child.classList.contains(".discount-price")){
+        if(child.classList.contains("discount-price")){
             obj.Item_Price = document.querySelector(".discount-price").innerHTML;
         }
         if(child.querySelector("img")){
@@ -94,6 +94,7 @@ const JSN = function htmlToJSON(element){
         }
     })
     let object = JSON.stringify(obj,null,2);
+    console.log(obj);
     console.log(object);
 }
 
@@ -103,5 +104,5 @@ const JSN = function htmlToJSON(element){
 
 let elemntos = document.querySelectorAll(".menu-card");
 elemntos.forEach(element=>{
-    element.addEventListener("click",JSN);
+    element.addEventListener("click", () =>JSN(element));
 })
