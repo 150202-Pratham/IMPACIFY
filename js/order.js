@@ -82,11 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
 const JSN = function htmlToJSON(element){
     const obj = {};
     let children = element.children;
-    console.log(children); // passes an array to children containing all the nodes / children element of the div passed in the function arguments.
+    // passes an array to children containing all the nodes / children element of the div passed in the function arguments.
     Array.from(children).forEach(child=>{
-        console.log(child);
+        
         if (child) { 
-            console.log("Child:", child); 
+            
 
             if (child.classList.contains("menu-card-content")) {
                 const titleElement = child.querySelector(".menu-card-title");
@@ -115,7 +115,7 @@ const JSN = function htmlToJSON(element){
     });
     
     let object = JSON.stringify(obj,null,2);
-    console.log(obj);
+    
     console.log(object);
 }
 
@@ -126,6 +126,6 @@ const JSN = function htmlToJSON(element){
 let elemntos = document.querySelectorAll(".menu-card");
 elemntos.forEach(element=>{
     element.addEventListener("click", () =>{
-        console.log(element);
+        
         JSN(element)});
 })
