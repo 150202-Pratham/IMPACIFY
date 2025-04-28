@@ -1,0 +1,12 @@
+name: Greet on Push
+
+on:
+  push:
+    branches: [main, master]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "🎉 New code pushed to the repository! Great job! 🚀"
