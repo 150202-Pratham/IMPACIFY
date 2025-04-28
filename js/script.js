@@ -142,3 +142,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+// Initialize cart from localStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Update cart count on page load
+function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) {
+        cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+    }
+}
+updateCartCount();
+
+// Handle "Add to Cart" buttons
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('button1')) {
+        const itemCard = e.target.closest('.menu-card');
+        const itemName = itemCard.querySelector('.menu-card-title').textContent;
+        const itemPrice = parseFloat(itemCard.querySelector('.discount-price').textContent.replace('$', ''));
+        const itemImage = itemCard.querySelector('img').src;
+
+        const existingItem = cart.find(item => item.name === itemName);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ name: itemName, price: itemPrice, image: itemImage, quantity: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        alert(`${itemName} added to cart!`);
+    }
+});
