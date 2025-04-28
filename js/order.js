@@ -75,3 +75,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 }); 
+
+
+
+
+const JSN = function htmlToJSON(element){
+    const obj = {};
+    let children = element.children;
+    // passes an array to children containing all the nodes / children element of the div passed in the function arguments.
+    Array.from(children).forEach(child=>{
+        
+        if (child) { 
+            
+
+            if (child.classList.contains("menu-card-content")) {
+                const titleElement = child.querySelector(".menu-card-title");
+                const priceElement = child.querySelector(".discount-price");
+                const imgElement = child.querySelector("img");
+
+        
+                if (titleElement) {
+                    obj.Item_Name = titleElement.innerHTML;
+                    
+                }
+
+           
+                if (priceElement) {
+                    obj.Item_Price = priceElement.innerHTML;
+                    
+                }
+
+                
+                if (imgElement) {
+                    obj.Item_Image = imgElement.getAttribute("src");
+                    console.log("Item Image:", obj.Item_Image);
+                }
+            }
+        }
+    });
+    
+    let object = JSON.stringify(obj,null,2);
+    
+    console.log(object);
+}
+
+
+
+
+
+let elemntos = document.querySelectorAll(".menu-card");
+elemntos.forEach(element=>{
+    element.addEventListener("click", () =>{
+        JSN(element)});
+})
