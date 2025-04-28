@@ -93,6 +93,7 @@ body{
 body,
 button,
 input{
+    margin-top: 1rem;
   font-family: var(--body-font);
   font-size: var(--normal-font);
   font-weight: var(--font-regular);
@@ -174,6 +175,8 @@ img{
   width: 100%;
   z-index: var(--z-fixed);
   transition: var(--tran-0-5);
+  padding: 0px;
+  margin: 0px;
 }
 .header-active{
   height: 6rem;
@@ -910,3 +913,13 @@ img{
 
 }
 }
+
+.full-menu-btn{
+    border-radius: 5rem;
+    background-color: #C87E4F;
+    color: white;
+    margin-top: 2rem;
+    width: 15rem;
+    height: 3rem;
+    border: none;
+  }
