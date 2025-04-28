@@ -96,13 +96,13 @@ const JSN = function htmlToJSON(element){
         
                 if (titleElement) {
                     obj.Item_Name = titleElement.innerHTML;
-                    console.log("Item Name:", obj.Item_Name); 
+                    
                 }
 
            
                 if (priceElement) {
                     obj.Item_Price = priceElement.innerHTML;
-                    console.log("Item Price:", obj.Item_Price); 
+                    
                 }
 
                 
@@ -126,6 +126,5 @@ const JSN = function htmlToJSON(element){
 let elemntos = document.querySelectorAll(".menu-card");
 elemntos.forEach(element=>{
     element.addEventListener("click", () =>{
-        
         JSN(element)});
 })
