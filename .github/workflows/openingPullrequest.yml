@@ -1,0 +1,12 @@
+name: Greet on Pull Request
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome Pull Request
+        run: echo "👋 Thanks for submitting a Pull Request! We'll review it soon. 🔍"
