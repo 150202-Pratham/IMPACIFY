@@ -80,52 +80,60 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-const JSN = function htmlToJSON(element){
-    const obj = {};
-    let children = element.children;
-    // passes an array to children containing all the nodes / children element of the div passed in the function arguments.
-    Array.from(children).forEach(child=>{
-        
-        if (child) { 
-            
+document.addEventListener('DOMContentLoaded', function() {
+    const cartItemsContainer = document.querySelector('.cart-items');
+    const subtotalElement = document.querySelector('.summary-item span:nth-child(2)');
+    const totalElement = document.querySelector('.total span:nth-child(2)');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            if (child.classList.contains("menu-card-content")) {
-                const titleElement = child.querySelector(".menu-card-title");
-                const priceElement = child.querySelector(".discount-price");
-                const imgElement = child.querySelector("img");
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+        subtotalElement.textContent = "$0.00";
+        totalElement.textContent = "$2.00";
+        return;
+    }
 
-        
-                if (titleElement) {
-                    obj.Item_Name = titleElement.innerHTML;
-                    
-                }
+    cartItemsContainer.innerHTML = '';
 
-           
-                if (priceElement) {
-                    obj.Item_Price = priceElement.innerHTML;
-                    
-                }
+    let subtotal = 0;
+    cart.forEach(item => {
+        subtotal += item.price * item.quantity;
+        cartItemsContainer.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <p class="price">$${item.price.toFixed(2)}</p>
+                    <div class="quantity">
+                        <button class="qty-btn minus" data-name="${item.name}"><i class="fas fa-minus"></i></button>
+                        <span>${item.quantity}</span>
+                        <button class="qty-btn plus" data-name="${item.name}"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
 
-                
-                if (imgElement) {
-                    obj.Item_Image = imgElement.getAttribute("src");
-                    console.log("Item Image:", obj.Item_Image);
+    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    totalElement.textContent = `$${(subtotal + 2).toFixed(2)}`;
+
+    // Quantity button functionality
+    cartItemsContainer.addEventListener('click', function(e) {
+        if (e.target.closest('.qty-btn')) {
+            const btn = e.target.closest('.qty-btn');
+            const itemName = btn.dataset.name;
+            const item = cart.find(i => i.name === itemName);
+            if (btn.classList.contains('plus')) {
+                item.quantity++;
+            } else if (btn.classList.contains('minus')) {
+                if (item.quantity > 1) {
+                    item.quantity--;
+                } else {
+                    cart = cart.filter(i => i.name !== itemName);
                 }
             }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload(); // reload to update UI
         }
     });
-    
-    let object = JSON.stringify(obj,null,2);
-    
-    console.log(object);
-}
-
-
-
-
-
-let elemntos = document.querySelectorAll(".menu-card");
-elemntos.forEach(element=>{
-    element.addEventListener("click", () =>{
-        JSN(element)});
 });
