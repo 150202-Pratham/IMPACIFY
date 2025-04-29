@@ -9,7 +9,7 @@ It blends a smooth user experience with an impact-driven mission, promoting sust
 ## 🖼️ Screenshots
 
 ### Home Page
-![Home Page](images/home.png)
+![Home Page](images/Home.png)
 
 ### Menu Page
 ![Menu Page](images/Menu.png)
@@ -25,5 +25,14 @@ It blends a smooth user experience with an impact-driven mission, promoting sust
 
 ### Login/Signup Page
 ![Login Page](images/LoginSignup.png)
+
+
+## ✨ Features
+
+- User registration and login
+- Menu browsing and cart
+- Order placement
+- JSON-based backend order storage
+- Clean and responsive UI
 
 
