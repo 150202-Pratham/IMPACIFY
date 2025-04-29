@@ -155,7 +155,7 @@ window.addEventListener('DOMContentLoaded', function() {
     cartContainer.innerHTML = '';
 
     // Create and append cart items
-    cart.forEach(item => {
+    cart.forEach((item, index) => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
@@ -168,8 +168,84 @@ window.addEventListener('DOMContentLoaded', function() {
                     <span class="qty-value">1</span>
                     <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
                 </div>
+                <div class="customize-section">
+                    <button class="customize-toggle">
+                        <i class="fas fa-sliders-h"></i>
+                        Customize Drink
+                    </button>
+                    <div class="customization-panel">
+                        <div class="custom-option">
+                            <label><i class="fas fa-temperature-high"></i> Temperature</label>
+                            <div class="option-choices">
+                                <input type="radio" id="hot${index}" name="temp${index}" value="hot" checked>
+                                <label for="hot${index}">Hot</label>
+                                <input type="radio" id="iced${index}" name="temp${index}" value="iced">
+                                <label for="iced${index}">Iced</label>
+                            </div>
+                        </div>
+                        <div class="custom-option">
+                            <label><i class="fas fa-coffee"></i> Strength</label>
+                            <select class="strength-select">
+                                <option value="regular">Regular</option>
+                                <option value="strong">Strong</option>
+                                <option value="extra-strong">Extra Strong</option>
+                            </select>
+                        </div>
+                        <div class="custom-option">
+                            <label><i class="fas fa-glass-whiskey"></i> Size</label>
+                            <select class="size-select">
+                                <option value="small">Small (8 oz)</option>
+                                <option value="medium" selected>Medium (12 oz)</option>
+                                <option value="large">Large (16 oz)</option>
+                                <option value="extra-large">Extra Large (20 oz)</option>
+                            </select>
+                        </div>
+                        <div class="custom-option">
+                            <label><i class="fas fa-tint"></i> Milk Options</label>
+                            <select class="milk-select">
+                                <option value="whole">Whole Milk</option>
+                                <option value="skim">Skim Milk</option>
+                                <option value="oat">Oat Milk (+$0.50)</option>
+                                <option value="almond">Almond Milk (+$0.50)</option>
+                                <option value="soy">Soy Milk (+$0.50)</option>
+                            </select>
+                        </div>
+                        <div class="custom-option">
+                            <label><i class="fas fa-plus-circle"></i> Extra Shots</label>
+                            <div class="shots-counter">
+                                <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                                <span>0</span>
+                                <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                                <span class="price-note">(+$0.75/shot)</span>
+                            </div>
+                        </div>
+                        <div class="custom-option">
+                            <label><i class="fas fa-comment"></i> Special Instructions</label>
+                            <textarea placeholder="Any special requests? (Extra hot, light ice, etc.)"></textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
         `;
         cartContainer.appendChild(cartItem);
+    });
+
+    // Add event listener for customize toggle buttons
+    const customizeToggles = document.querySelectorAll('.customize-toggle');
+    customizeToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const panel = this.nextElementSibling;
+            panel.classList.toggle('active');
+            
+            // Update button icon
+            const icon = this.querySelector('i');
+            if (panel.classList.contains('active')) {
+                icon.classList.remove('fa-sliders-h');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-sliders-h');
+            }
+        });
     });
 });
