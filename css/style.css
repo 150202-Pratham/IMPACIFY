@@ -213,7 +213,8 @@ img{
 .logo-text,
 .nav-link,
 .phone-icon,
-.phone-number{
+.phone-number,
+.button-login{
   color: var(--white-color);
 }
 
@@ -221,7 +222,8 @@ img{
 .header-active .logo-text,
 .header-active .nav-link,
 .header-active .phone-icon,
-.header-active .phone-number{
+.header-active .phone-number,
+.header-active .button-login{
   color: var(--text-color);
 }
 
