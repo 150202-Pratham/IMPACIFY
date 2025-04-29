@@ -100,6 +100,14 @@ input{
   color: var(--text-color);
 }
 
+/* Login Button Styling */
+.button-login{
+  font-family: var(--body-font);
+  font-size: var(--normal-font);
+  font-weight: var(--font-regular);
+  color: white;
+}
+
 input{
   outline: none;
 }
@@ -135,6 +143,16 @@ img{
   outline: none;
   color: var(--white-color);
   padding: 1.4rem 4rem;
+  border-radius: 3rem;
+  background-color: var(--primary-color);
+  transition: var(--tran-0-3);
+  cursor: pointer;
+}
+.button1{
+  border: none;
+  outline: none;
+  color: var(--white-color);
+  padding: 0.8rem 1.8rem;
   border-radius: 3rem;
   background-color: var(--primary-color);
   transition: var(--tran-0-3);
@@ -195,7 +213,8 @@ img{
 .logo-text,
 .nav-link,
 .phone-icon,
-.phone-number{
+.phone-number,
+.button-login{
   color: var(--white-color);
 }
 
@@ -203,7 +222,8 @@ img{
 .header-active .logo-text,
 .header-active .nav-link,
 .header-active .phone-icon,
-.header-active .phone-number{
+.header-active .phone-number,
+.header-active .button-login{
   color: var(--text-color);
 }
 

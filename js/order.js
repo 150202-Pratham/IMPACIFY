@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }); 
 
 
+
 const JSN = function htmlToJSON(element) {
     let children = element.children;
     const obj = {}; 
@@ -101,11 +102,68 @@ const JSN = function htmlToJSON(element) {
                    
                     obj.Item_Image = imgPath;
                     console.log("Image path stored:", obj.Item_Image);
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cartItemsContainer = document.querySelector('.cart-items');
+    const subtotalElement = document.querySelector('.summary-item span:nth-child(2)');
+    const totalElement = document.querySelector('.total span:nth-child(2)');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+        subtotalElement.textContent = "$0.00";
+        totalElement.textContent = "$2.00";
+        return;
+    }
+
+    cartItemsContainer.innerHTML = '';
+
+    let subtotal = 0;
+    cart.forEach(item => {
+        subtotal += item.price * item.quantity;
+        cartItemsContainer.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <p class="price">$${item.price.toFixed(2)}</p>
+                    <div class="quantity">
+                        <button class="qty-btn minus" data-name="${item.name}"><i class="fas fa-minus"></i></button>
+                        <span>${item.quantity}</span>
+                        <button class="qty-btn plus" data-name="${item.name}"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    totalElement.textContent = `$${(subtotal + 2).toFixed(2)}`;
+
+    // Quantity button functionality
+    cartItemsContainer.addEventListener('click', function(e) {
+        if (e.target.closest('.qty-btn')) {
+            const btn = e.target.closest('.qty-btn');
+            const itemName = btn.dataset.name;
+            const item = cart.find(i => i.name === itemName);
+            if (btn.classList.contains('plus')) {
+                item.quantity++;
+            } else if (btn.classList.contains('minus')) {
+                if (item.quantity > 1) {
+                    item.quantity--;
+                } else {
+                    cart = cart.filter(i => i.name !== itemName);
+
                 }
             }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload(); // reload to update UI
         }
     });
-    
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
     
@@ -361,3 +419,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateCartTotals();
 });
+
+});
+
