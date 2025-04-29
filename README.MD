@@ -35,4 +35,8 @@ It blends a smooth user experience with an impact-driven mission, promoting sust
 - JSON-based backend order storage
 - Clean and responsive UI
 
-
+## 🔧 Tech Stack
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Backend**: Node.js, Express.js
+- **Database**: JSON file (orders.json)
+- **Version Control**: Git & GitHub
