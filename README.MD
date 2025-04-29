@@ -48,3 +48,5 @@ It blends a smooth user experience with an impact-driven mission, promoting sust
 - Dhruvi
 - Sukhrattan
 
+## 🙏 Acknowledgements
+Thanks to our faculty and peers for continuous support and Source Code Management guidance.
