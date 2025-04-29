@@ -78,9 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
+const obj = {};
 const JSN = function htmlToJSON(element){
-    const obj = {};
+    
     let children = element.children;
     // passes an array to children containing all the nodes / children element of the div passed in the function arguments.
     Array.from(children).forEach(child=>{
@@ -114,9 +114,17 @@ const JSN = function htmlToJSON(element){
         }
     });
     
-    let object = JSON.stringify(obj,null,2);
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
     
-    console.log(object);
+    cart.push(obj);
+
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    console.log("Cart Saved:", cart);
+    
+   
 }
 
 
