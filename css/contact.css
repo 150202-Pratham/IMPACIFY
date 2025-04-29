@@ -1,0 +1,150 @@
+/* Contact Form Specific Styles */
+.contact-form .content-subtitle {
+    text-align: left;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #C87E4F;
+}
+
+.form-content {
+    display: grid;
+    row-gap: 1.5rem;
+}
+
+.form-inputBox {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1.4rem 2rem;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    color: #333;
+    background-color: #FFF;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+
+.form-input:focus {
+    border-color: #C87E4F;
+}
+
+.form-input::placeholder {
+    color: #888682;
+}
+
+.form-input[type="textarea"] {
+    border-radius: 1rem;
+    resize: vertical;
+}
+
+.contact-form .button {
+    justify-self: start;
+    border: none;
+    outline: none;
+    color: #FFF;
+    padding: 1.4rem 4rem;
+    border-radius: 3rem;
+    background-color: #C87E4F;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form .button:hover {
+    background-color: #C2703D;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .contact-form .content-subtitle {
+        text-align: center;
+    }
+
+    .contact-form .button {
+        justify-self: center;
+    }
+}
+
+/* Style the contact form section to match the design */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 15px 20px;
+    border: 2px solid #dcdcdc;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #c47a4b;
+  }
+  
+  .contact-form textarea {
+    border-radius: 30px;
+    resize: none;
+    min-height: 130px;
+  }
+  
+  .contact-form button {
+    background-color: #c47a4b;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-start;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #a6633c;
+  }
+  /* Make contact details and form side by side */
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+  
+  /* Ensure equal width on larger screens */
+  .contact-details,
+  .contact-form {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  /* Optional: keep form max width cleaner */
+  .contact-form {
+    max-width: 500px;
+  }
+
+
+@media screen and (max-width: 600px) {
+    .form-input {
+        padding: 1.2rem 1.5rem;
+    }
+}

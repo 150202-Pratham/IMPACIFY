@@ -1,39 +1,29 @@
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com  -->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Website</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coffee Website</title>
 
-    <!-- Swiper JS CSS-->
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+        <!-- Swiper JS CSS-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
-    <!-- Scroll Reveal -->
-    <link rel="stylesheet" href="css/scrollreveal.min.js">
+        <!-- Scroll Reveal -->
+        <link rel="stylesheet" href="css/scrollreveal.min.js">
 
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-        
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+        <!-- Menu Section Scroll Effect -->
 
-</head>
-<body>
-<!-- Header -->
-    <header class="header">
-            <nav class="nav container flex">
-                    <a href="#" class="logo-content flex">
-                        <i class='bx bx-coffee logo-icon'></i>
-                        <span class="logo-text">Coffee.</span>
-                    </a>
+        <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+
 
                     <div class="menu-content">
                             <ul class="menu-list flex">
                                     <li><a href="#home" class="nav-link active-navlink">home</a></li>
                                     <li><a href="#about" class="nav-link">about</a></li>
-                                    <li><a href="Menu.html" class="nav-link">menu</a></li>
+                                    <li><a href="#menu" class="nav-link">menu</a></li>
                                     <li><a href="#review" class="nav-link">review</a></li>
                             </ul>
 
@@ -45,17 +35,56 @@
                                     <a href="https://www.youtube.com/login"><i class='bx bxl-youtube'></i></a>
                             </div>
 
-                            <i class='bx bx-x navClose-btn'></i>
-                        </div>
-                        
-                        <div class="contact-content flex">
-                            <i class='bx bx-phone phone-icon' ></i>
-                            <span class="phone-number">0022-0303-2030</span>
-                        </div>
+        <!-- Boxicons -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
-                        <i class='bx bx-menu navOpen-btn'></i>
-                </nav>
-        
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/home-menu.css">
+
+</head>
+
+<body>
+
+<!-- Header -->
+    <!-- Header -->
+<header class="header">
+        <nav class="nav container flex">
+            <a href="#" class="logo-content flex">
+                <i class='bx bx-coffee logo-icon'></i>
+                <span class="logo-text">Coffee Havan</span>
+            </a>
+    
+            <div class="menu-content">
+                <ul class="menu-list flex">
+                    <li><a href="./index.html" class="nav-link active-navlink">home</a></li>
+                    <li><a href="./about.html" class="nav-link">about</a></li>
+                    <li><a href="./index.html#menu" class="nav-link">menu</a></li>
+                    <li><a href="./contact.html" class="nav-link">Conatct</a></li>
+                </ul>
+    
+                <div class="media-icons flex">
+                    <a href="https://www.facebook.com"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://twitter.com/i/flow/login"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.instagram.com/accounts/login"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="https://github.com/login"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.youtube.com/login"><i class='bx bxl-youtube'></i></a>
+                </div>
+    
+                <i class='bx bx-x navClose-btn'></i>
+            </div>
+    
+            <div class="contact-content flex">
+                <i class='bx bx-phone phone-icon'></i>
+                <span class="phone-number">0022-0303-2030</span>
+            </div>
+            <div class="logout-btn">
+                <a href="./login.html" class="button">Logout</a>
+            </div>
+    
+            <i class='bx bx-menu navOpen-btn'></i>
+        </nav>
     </header>
 
 <!-- Home Section -->
@@ -154,111 +183,111 @@
 
     
 <!-- Menu Section -->
-        <section class="section menu" id="menu">
-            <div class="menu-container container">
-                    <div class="meu-text">
-                            <h4 class="section-subtitle"><i>Our Menu</i></h4>
-                            <h2 class="section-title">Our Popular Menu</h2>
-                            <p class="section-description">
-                                Our place designed by pro architecture with psychologist to build best place suit you.  Our place designed by pro architecture with psychologist to build best place suit you.
-                            </p>
-                    </div>
+<section class="section menu" id="menu">
+        <div class="menu-container container">
+                <div class="meu-text">
+                        <h4 class="section-subtitle"><i>Our Menu</i></h4>
+                        <h2 class="section-title">Our Popular Menu</h2>
+                        <p class="section-description">
+                                Our place designed by pro architecture with psychologist to build best
+                                place suit you. Our place designed by pro architecture with psychologist
+                                to build best place suit you.
+                        </p>
+                </div>
 
-                    <div class="menu-content">
-                            <div class="menu-items">
-                                    <div class="menu-item flex">
-                                            <img src="images/menuImg1.png" alt="" class="menu-img">
+                <div class="menu-content">
+                        <div class="menu-items">
+                                <div class="menu-item flex">
+                                        <img src="./images/americono-roasted-coffee.jpeg" alt=""
+                                                class="menu-img">
 
-                                            <div class="menuItem-details">
-                                                    <h4 class="menuItem-topic">Americano Roasted Coffee</h4>
-                                                    <p class="menuItem-des">It is a long established fact that a reader will be distracted by the readable.</p>
-                                            </div>
+                                        <div class="menuItem-details">
+                                                <h4 class="menuItem-topic">Americano Roasted Coffee</h4>
+                                                <p class="menuItem-des">It is a long established fact
+                                                        that a reader will be distracted by the
+                                                        readable.</p>
+                                        </div>
 
-                                            <div class="menuItem-price flex">
-                                                    <span class="discount-price">$18.99</span>
-                                                    <span class="real-price">$20.66</span>
-                                            </div>
-                                    </div>
-                                    <div class="menu-item flex">
-                                            <img src="images/menuImg1.png" alt="" class="menu-img">
+                                        <div class="menuItem-price flex">
+                                                <span class="discount-price">$18.99</span>
+                                                <span class="real-price">$20.66</span>
+                                        </div>
+                                </div>
+                                <div class="menu-item flex">
+                                        <img src="./images/cappuciono.jpg" alt="" class="menu-img">
 
-                                            <div class="menuItem-details">
-                                                    <h4 class="menuItem-topic">Americano Roasted Coffee</h4>
-                                                    <p class="menuItem-des">It is a long established fact that a reader will be distracted by the readable.</p>
-                                            </div>
+                                        <div class="menuItem-details">
+                                                <h4 class="menuItem-topic">Cappuciono</h4>
+                                                <p class="menuItem-des">A creamy blend of espresso,
+                                                        steamed milk, and frothy foam.</p>
+                                        </div>
 
-                                            <div class="menuItem-price flex">
-                                                    <span class="discount-price">$18.99</span>
-                                                    <span class="real-price">$20.66</span>
-                                            </div>
-                                    </div>
-                                    <div class="menu-item flex">
-                                            <img src="images/menuImg1.png" alt="" class="menu-img">
+                                        <div class="menuItem-price flex">
+                                                <span class="discount-price">$15.99</span>
+                                                <span class="real-price">$17.50</span>
+                                        </div>
+                                </div>
+                                <div class="menu-item flex">
+                                        <img src="./images/matcha-late.jpg" alt="" class="menu-img">
 
-                                            <div class="menuItem-details">
-                                                    <h4 class="menuItem-topic">Americano Roasted Coffee</h4>
-                                                    <p class="menuItem-des">It is a long established fact that a reader will be distracted by the readable.</p>
-                                            </div>
+                                        <div class="menuItem-details">
+                                                <h4 class="menuItem-topic">Matcha Latte</h4>
+                                                <p class="menuItem-des">A blend of fresh fruits for a
+                                                        healthy and delicious treat.</p>
+                                        </div>
 
-                                            <div class="menuItem-price flex">
-                                                    <span class="discount-price">$18.99</span>
-                                                    <span class="real-price">$20.66</span>
-                                            </div>
-                                    </div>
-                                    <div class="menu-item flex">
-                                            <img src="images/menuImg1.png" alt="" class="menu-img">
+                                        <div class="menuItem-price flex">
+                                                <span class="discount-price">$12.99</span>
+                                                <span class="real-price">$14.50</span>
+                                        </div>
+                                </div>
+                        </div>
 
-                                            <div class="menuItem-details">
-                                                    <h4 class="menuItem-topic">Americano Roasted Coffee</h4>
-                                                    <p class="menuItem-des">It is a long established fact that a reader will be distracted by the readable.</p>
-                                            </div>
 
-                                            <div class="menuItem-price flex">
-                                                    <span class="discount-price">$18.99</span>
-                                                    <span class="real-price">$20.66</span>
-                                            </div>
-                                    </div>
-                            </div>
+                        <div class="time-table">
+                                <span class="time-topic">Our Timings</span>
 
-                            <div class="time-table">
-                                    <span class="time-topic">Catogries Time</span>
+                                <ul class="time-lists">
+                                        <li class="time-list flex">
+                                                <span class="open-day"> Sunday</span>
+                                                <span class="open-time">Closed</span>
+                                        </li>
+                                        <li class="time-list flex">
+                                                <span class="open-day"> Monday</span>
+                                                <span class="open-time">7.00am - 3.00pm</span>
+                                        </li>
+                                        <li class="time-list flex">
+                                                <span class="open-day"> Tuesday</span>
+                                                <span class="open-time">7.00am - 3.00pm</span>
+                                        </li>
+                                        <li class="time-list flex">
+                                                <span class="open-day"> Wednesday</span>
+                                                <span class="open-time">7.00am - 3.00pm</span>
+                                        </li>
+                                        <li class="time-list flex">
+                                                <span class="open-day"> Thursday</span>
+                                                <span class="open-time">7.00am - 3.00pm</span>
+                                        </li>
+                                        <li class="time-list flex">
+                                                <span class="open-day"> Friday</span>
+                                                <span class="open-time">7.00am - 3.00pm</span>
+                                        </li>
+                                        <li class="time-list flex">
+                                                <span class="open-day"> Saturday</span>
+                                                <span class="open-time">9.00am - 2.00pm</span>
+                                        </li>
+                                </ul>
+                        </div>
+                </div>
 
-                                    <ul class="time-lists">
-                                            <li class="time-list flex">
-                                                    <span class="open-day"> Sunday</span>
-                                                    <span class="open-time">Closed</span>
-                                            </li>
-                                            <li class="time-list flex">
-                                                    <span class="open-day"> Monday</span>
-                                                    <span class="open-time">7.00am - 3.00pm</span>
-                                            </li>
-                                            <li class="time-list flex">
-                                                    <span class="open-day"> Tuesday</span>
-                                                    <span class="open-time">7.00am - 3.00pm</span>
-                                            </li>
-                                            <li class="time-list flex">
-                                                    <span class="open-day"> Wednesday</span>
-                                                    <span class="open-time">7.00am - 3.00pm</span>
-                                            </li>
-                                            <li class="time-list flex">
-                                                    <span class="open-day"> Thursday</span>
-                                                    <span class="open-time">7.00am - 3.00pm</span>
-                                            </li>
-                                            <li class="time-list flex">
-                                                    <span class="open-day"> Friday</span>
-                                                    <span class="open-time">7.00am - 3.00pm</span>
-                                            </li>
-                                            <li class="time-list flex">
-                                                    <span class="open-day"> Saturday</span>
-                                                    <span class="open-time">9.00am - 2.00pm</span>
-                                            </li>
-                                    </ul>
-                            </div>
-                    </div>
-            </div>
-        </section>
-
-    
+                <a href="Menu.html">
+                        <div>
+                                <button class="button">Full Menu</button>
+                        </div>
+                </a>
+        </div>
+</section>
+  
 <!-- Brand Section -->
         <section class="section brand">
             <div class="brand-container container">
@@ -359,73 +388,93 @@
                 </div>
             </div>
         </section>
-        
-    
-<!-- Footer Section -->
-        <footer class="section footer">
-            <div class="footer-container container">
-                    <div class="footer-content">
-                        <a href="#" class="logo-content flex">
-                                <i class='bx bx-coffee logo-icon'></i>
-                                <span class="logo-text">Coffee.</span>
-                            </a>
 
-                            <p class="content-description">Coffee is a cafe that serve many variant of coffee and other dishes with very comfortable place.</p>
+                <!-- Footer Section -->
+                <footer class="section footer">
+                        <div class="footer-container container">
+                                <div class="footer-content">
+                                        <a href="#" class="logo-content flex">
+                                                <i class='bx bx-coffee logo-icon'></i>
+                                                <span class="logo-text">Coffee.</span>
+                                        </a>
 
-                            <div class="footer-location flex">
-                                <i class='bx bx-map map-icon'></i>
-                                
-                                <div class="location-text">
-                                        USA Californa 65 South Fifth St.Sicklerville, NJ 08081
+                                        <p class="content-description">Coffee is a cafe that serve many variant of
+                                                coffee and other dishes with very comfortable place.</p>
+
+                                        <div class="footer-location flex">
+                                                <i class='bx bx-map map-icon'></i>
+
+                                                <div class="location-text">
+                                                        USA Californa 65 South Fifth St.Sicklerville, NJ 08081
+                                                </div>
+                                        </div>
                                 </div>
-                            </div>
-                    </div>
 
-                    <div class="footer-linkContent">
-                            <ul class="footer-links">
-                                    <h4 class="footerLinks-title">Facility</h4>
+                                <div class="footer-linkContent">
+                                        <ul class="footer-links">
+                                                <h4 class="footerLinks-title">Facility</h4>
 
-                                    <li><a href="#" class="footer-link">Private Room</a></li>
-                                    <li><a href="#" class="footer-link">Meeting Room</a></li>
-                                    <li><a href="#" class="footer-link">Event Room</a></li>
-                                    <li><a href="#" class="footer-link">Creative Studio</a></li>
-                                    <li><a href="#" class="footer-link">Custom Room</a></li>
-                            </ul>
-                            <ul class="footer-links">
-                                    <h4 class="footerLinks-title">Facility</h4>
+                                                <li><a href="#" class="footer-link">Private Room</a></li>
+                                                <li><a href="#" class="footer-link">Meeting Room</a></li>
+                                                <li><a href="#" class="footer-link">Event Room</a></li>
+                                                <li><a href="#" class="footer-link">Creative Studio</a></li>
+                                                <li><a href="#" class="footer-link">Custom Room</a></li>
+                                        </ul>
+                                        <ul class="footer-links">
+                                                <h4 class="footerLinks-title">Facility</h4>
 
-                                    <li><a href="#" class="footer-link">Coffee</a></li>
-                                    <li><a href="#" class="footer-link">Beverages</a></li>
-                                    <li><a href="#" class="footer-link">Dishes</a></li>
-                            </ul>
-                            <ul class="footer-links">
-                                    <h4 class="footerLinks-title">Support</h4>
+                                                <li><a href="#" class="footer-link">Coffee</a></li>
+                                                <li><a href="#" class="footer-link">Beverages</a></li>
+                                                <li><a href="#" class="footer-link">Dishes</a></li>
+                                        </ul>
+                                        <ul class="footer-links">
+                                                <h4 class="footerLinks-title">Support</h4>
 
-                                    <li><a href="#" class="footer-link">About Us</a></li>
-                                    <li><a href="#" class="footer-link">FAQs</a></li>
-                                    <li><a href="#" class="footer-link">Private Policy</a></li>
-                                    <li><a href="#" class="footer-link">Help Us</a></li>
-                            </ul>
-                    </div>
-            </div>
-            <div class="footer-copyRight">&#169; CodingLab. All rigths reserved</div>
-        </footer>
-
-<!-- Scroll Up -->
-        <a href="#home" class="scrollUp-btn flex">
-                <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
-        </a>
-
-</main>
-
-<!-- Swiper JS -->
-<script src="js/swiper-bundle.min.js"></script>
-
-<!-- Scroll Reveal -->
-<script src="js/scrollreveal.js"></script>
 
 <!-- JavaScript -->
     <script src="js/script.js"></script>
     <script src="js/order.js"></script>
+
+                                                <li><a href="#" class="footer-link">About Us</a></li>
+                                                <li><a href="#" class="footer-link">FAQs</a></li>
+                                                <li><a href="#" class="footer-link">Private Policy</a></li>
+                                                <li><a href="#" class="footer-link">Help Us</a></li>
+                                        </ul>
+                                </div>
+                        </div>
+                        <div class="footer-copyRight">&#169; CodingLab. All rigths reserved</div>
+                </footer>
+
+                <!-- Scroll Up -->
+                <a href="#home" class="scrollUp-btn flex">
+                        <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
+                </a>
+
+        </main>
+
+        <!-- Swiper JS -->
+        <script src="js/swiper-bundle.min.js"></script>
+
+        <!-- Scroll Reveal -->
+        <script src="js/scrollreveal.js"></script>
+
+        <!-- JavaScript -->
+        <script src="js/script.js"></script>
+
+        <!-- Menu Section Scroll Effect -->
+        <script>
+                ScrollReveal().reveal('.menu-card', {
+                        duration: 1000,
+                        distance: '30px',
+                        origin: 'bottom',
+                        opacity: 0,
+                        easing: 'ease-in-out',
+                        delay: 100,
+                        interval: 200,
+                        reset: false
+                });
+        </script>
+
 </body>
+
 </html>
