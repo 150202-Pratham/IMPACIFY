@@ -108,6 +108,11 @@ const JSN = function htmlToJSON(element) {
     cart.push(obj);
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log("Cart Saved:", cart);
+    
+    // Update cart count in header
+    if (typeof window.updateCartCount === 'function') {
+        window.updateCartCount();
+    }
 }
 
 // Add click event listeners to menu cards
