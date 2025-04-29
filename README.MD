@@ -12,18 +12,18 @@ It blends a smooth user experience with an impact-driven mission, promoting sust
 ![Home Page](images/home.png)
 
 ### Menu Page
-![Menu Page](images/menu.png)
+![Menu Page](images/Menu.png)
 
 ### About Page
-![About Page](images/menu.png)
+![About Page](images/About.png)
 
 ### Contact Page
-![Conatct Page](images/menu.png)
+![Conatct Page](images/Contact.png)
 
 ### Order Page
-![Order Page](images/menu.png)
+![Order Page](images/Order.png)
 
 ### Login/Signup Page
-![Login Page](images/menu.png)
+![Login Page](images/LoginSignup.png)
 
 
