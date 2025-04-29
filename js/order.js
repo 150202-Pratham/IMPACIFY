@@ -149,3 +149,18 @@ window.addEventListener('DOMContentLoaded', function() {
       cartContainer.innerHTML = "<p>Your cart is empty!</p>";
       return;
     }
+    cartItem.innerHTML = `
+    <img src="${item.Item_Image}" alt="${item.Item_Name}">
+    <div class="item-details">
+      <h3>${item.Item_Name}</h3>
+      <p class="price">${item.Item_Price}</p>
+      <div class="quantity">
+        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+        <span class="qty-value">1</span>
+        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+  `;
+
+  cartContainer.appendChild(cartItem);
+});
