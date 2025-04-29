@@ -1,5 +1,5 @@
 /* Header Styling */
-.header {
+/* .header {
   position: fixed;
   top: 0;
   left: 0;
@@ -78,10 +78,10 @@
   font-size: 1rem;
   font-weight: bold;
   color: #C2703D;
-}
+} */
 
 /* Responsive navbar */
-.navOpen-btn,
+/* .navOpen-btn,
 .navClose-btn {
     display: none;
     color: #C2703D;
@@ -118,7 +118,7 @@
       align-items: center;
       gap: 1rem;
   }
-}
+} */
 
 /* About Section Styling */
 .container_about_1 {
