@@ -1,0 +1,14 @@
+name: Fun Greet
+
+on:
+  push:
+
+jobs:
+  fun-greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fun Echo
+        run: |
+          echo "🐍 Keep coding!"
+          echo "🚀 Push Received!"
+          echo "🔥 Stay Awesome!"
