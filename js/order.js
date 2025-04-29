@@ -266,3 +266,97 @@ window.addEventListener('DOMContentLoaded', function() {
     // Setup event listeners after cart items are created
     setupEventListeners();
 });
+
+// Function to calculate and update cart totals
+function updateCartTotals() {
+    const cartItems = document.querySelectorAll('.cart-item');
+    let subtotal = 0;
+    const deliveryFee = 2.00;
+
+    cartItems.forEach(item => {
+        const priceText = item.querySelector('.price').textContent;
+        const quantity = parseInt(item.querySelector('.qty-value').textContent);
+        const price = parseFloat(priceText.replace('$', ''));
+        subtotal += price * quantity;
+
+        // Add extra charges for milk options
+        const milkSelect = item.querySelector('.milk-select');
+        if (milkSelect && milkSelect.value.includes('Milk (+$0.50)')) {
+            subtotal += 0.50 * quantity;
+        }
+
+        // Add extra charges for shots
+        const shotsCount = parseInt(item.querySelector('.shots-counter span').textContent);
+        subtotal += 0.75 * shotsCount * quantity;
+    });
+
+    // Update the summary section
+    const subtotalElement = document.querySelector('.summary-item:first-child span:last-child');
+    const totalElement = document.querySelector('.summary-item.total span:last-child');
+    
+    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    totalElement.textContent = `$${(subtotal + deliveryFee).toFixed(2)}`;
+}
+
+// Modify the quantity button click handler to update totals
+function setupEventListeners() {
+    // ... existing event listeners ...
+
+    // Quantity buttons
+    const qtyButtons = document.querySelectorAll('.qty-btn');
+    qtyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const isPlus = this.querySelector('.fa-plus') !== null;
+            const countSpan = this.parentElement.querySelector('span');
+            let count = parseInt(countSpan.textContent);
+            
+            if (isPlus) {
+                countSpan.textContent = count + 1;
+            } else if (count > 1) {
+                countSpan.textContent = count - 1;
+            }
+            updateCartTotals();
+        });
+    });
+
+    // Extra shots counter
+    const shotCounters = document.querySelectorAll('.shots-counter');
+    shotCounters.forEach(counter => {
+        const minusBtn = counter.querySelector('.minus');
+        const plusBtn = counter.querySelector('.plus');
+        const countDisplay = counter.querySelector('span');
+        
+        minusBtn.addEventListener('click', function() {
+            let count = parseInt(countDisplay.textContent);
+            if (count > 0) {
+                countDisplay.textContent = count - 1;
+                updateCartTotals();
+            }
+        });
+        
+        plusBtn.addEventListener('click', function() {
+            let count = parseInt(countDisplay.textContent);
+            countDisplay.textContent = count + 1;
+            updateCartTotals();
+        });
+    });
+
+    // Milk options change
+    const milkSelects = document.querySelectorAll('.milk-select');
+    milkSelects.forEach(select => {
+        select.addEventListener('change', function() {
+            updateCartTotals();
+        });
+    });
+}
+
+// Initialize totals when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing initialization code ...
+    
+    // Setup event listeners after cart items are created
+    setupEventListeners();
+    
+    // Calculate initial totals
+    updateCartTotals();
+});
