@@ -76,37 +76,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 }); 
 
-
-
-
-const JSN = function htmlToJSON(element){
-    
+// Function to convert menu card to JSON and add to cart
+const JSN = function htmlToJSON(element) {
     let children = element.children;
     const obj = {}; 
-    // passes an array to children containing all the nodes / children element of the div passed in the function arguments.
-    Array.from(children).forEach(child=>{
-        
+    
+    Array.from(children).forEach(child => {
         if (child) { 
-            
-
             if (child.classList.contains("menu-card-content")) {
                 const titleElement = child.querySelector(".menu-card-title");
                 const priceElement = child.querySelector(".discount-price");
                 const imgElement = child.querySelector("img");
 
-        
                 if (titleElement) {
                     obj.Item_Name = titleElement.innerHTML;
-                    
                 }
 
-           
                 if (priceElement) {
                     obj.Item_Price = priceElement.innerHTML;
-                    
                 }
 
-                
                 if (imgElement) {
                     obj.Item_Image = imgElement.getAttribute("src");
                     console.log("Item Image:", obj.Item_Image);
@@ -116,31 +105,18 @@ const JSN = function htmlToJSON(element){
     });
     
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    
     cart.push(obj);
-
-    
     localStorage.setItem('cart', JSON.stringify(cart));
-
     console.log("Cart Saved:", cart);
-    
-   
 }
 
-
-
-
-
-let elemntos = document.querySelectorAll(".menu-card");
-elemntos.forEach(element=>{
-    element.addEventListener("click", () =>{
-        JSN(element)});
-})
-
-
-
-
+// Add click event listeners to menu cards
+const menuCards = document.querySelectorAll(".menu-card");
+menuCards.forEach(element => {
+    element.addEventListener("click", () => {
+        JSN(element);
+    });
+});
 
 window.addEventListener('DOMContentLoaded', function() {
     const cartContainer = document.querySelector('.cart-items');
@@ -230,22 +206,63 @@ window.addEventListener('DOMContentLoaded', function() {
         cartContainer.appendChild(cartItem);
     });
 
-    // Add event listener for customize toggle buttons
-    const customizeToggles = document.querySelectorAll('.customize-toggle');
-    customizeToggles.forEach(toggle => {
-        toggle.addEventListener('click', function() {
-            const panel = this.nextElementSibling;
-            panel.classList.toggle('active');
-            
-            // Update button icon
-            const icon = this.querySelector('i');
-            if (panel.classList.contains('active')) {
-                icon.classList.remove('fa-sliders-h');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-sliders-h');
-            }
+    // Add event listeners for all interactive elements
+    function setupEventListeners() {
+        // Customize toggle buttons
+        const customizeToggles = document.querySelectorAll('.customize-toggle');
+        customizeToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const panel = this.nextElementSibling;
+                panel.classList.toggle('active');
+                
+                const icon = this.querySelector('i');
+                if (panel.classList.contains('active')) {
+                    icon.classList.remove('fa-sliders-h');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-sliders-h');
+                }
+            });
         });
-    });
+
+        // Extra shots counter
+        const shotCounters = document.querySelectorAll('.shots-counter');
+        shotCounters.forEach(counter => {
+            const minusBtn = counter.querySelector('.minus');
+            const plusBtn = counter.querySelector('.plus');
+            const countDisplay = counter.querySelector('span');
+            
+            minusBtn.addEventListener('click', function() {
+                let count = parseInt(countDisplay.textContent);
+                if (count > 0) {
+                    countDisplay.textContent = count - 1;
+                }
+            });
+            
+            plusBtn.addEventListener('click', function() {
+                let count = parseInt(countDisplay.textContent);
+                countDisplay.textContent = count + 1;
+            });
+        });
+
+        // Quantity buttons
+        const qtyButtons = document.querySelectorAll('.qty-btn');
+        qtyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const isPlus = this.querySelector('.fa-plus') !== null;
+                const countSpan = this.parentElement.querySelector('span');
+                let count = parseInt(countSpan.textContent);
+                
+                if (isPlus) {
+                    countSpan.textContent = count + 1;
+                } else if (count > 1) {
+                    countSpan.textContent = count - 1;
+                }
+            });
+        });
+    }
+
+    // Setup event listeners after cart items are created
+    setupEventListeners();
 });
