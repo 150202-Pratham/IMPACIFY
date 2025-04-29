@@ -78,10 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-const obj = {};
+
 const JSN = function htmlToJSON(element){
     
     let children = element.children;
+    const obj = {}; 
     // passes an array to children containing all the nodes / children element of the div passed in the function arguments.
     Array.from(children).forEach(child=>{
         
