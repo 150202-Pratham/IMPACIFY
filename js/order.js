@@ -274,28 +274,37 @@ function updateCartTotals() {
     const deliveryFee = 2.00;
 
     cartItems.forEach(item => {
-        const priceText = item.querySelector('.price').textContent;
-        const quantity = parseInt(item.querySelector('.qty-value').textContent);
-        const price = parseFloat(priceText.replace('$', ''));
-        subtotal += price * quantity;
+        try {
+            const priceText = item.querySelector('.price').textContent;
+            const quantity = parseInt(item.querySelector('.qty-value').textContent) || 1;
+            const price = parseFloat(priceText.replace(/[^0-9.]/g, '')) || 0;
+            subtotal += price * quantity;
 
-        // Add extra charges for milk options
-        const milkSelect = item.querySelector('.milk-select');
-        if (milkSelect && milkSelect.value.includes('Milk (+$0.50)')) {
-            subtotal += 0.50 * quantity;
+            // Add extra charges for milk options
+            const milkSelect = item.querySelector('.milk-select');
+            if (milkSelect) {
+                const selectedMilk = milkSelect.value;
+                if (['oat', 'almond', 'soy'].includes(selectedMilk)) {
+                    subtotal += 0.50 * quantity;
+                }
+            }
+
+            // Add extra charges for shots
+            const shotsCount = parseInt(item.querySelector('.shots-counter span').textContent) || 0;
+            subtotal += 0.75 * shotsCount * quantity;
+        } catch (error) {
+            console.error('Error calculating price for item:', error);
         }
-
-        // Add extra charges for shots
-        const shotsCount = parseInt(item.querySelector('.shots-counter span').textContent);
-        subtotal += 0.75 * shotsCount * quantity;
     });
 
     // Update the summary section
     const subtotalElement = document.querySelector('.summary-item:first-child span:last-child');
     const totalElement = document.querySelector('.summary-item.total span:last-child');
     
-    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-    totalElement.textContent = `$${(subtotal + deliveryFee).toFixed(2)}`;
+    if (subtotalElement && totalElement) {
+        subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+        totalElement.textContent = `$${(subtotal + deliveryFee).toFixed(2)}`;
+    }
 }
 
 // Modify the quantity button click handler to update totals
