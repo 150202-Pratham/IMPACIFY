@@ -3,7 +3,9 @@ function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartCount = document.querySelector('.cart-count');
     if (cartCount) {
-        cartCount.textContent = cart.length;
+        // Calculate total quantity of all items
+        const totalQuantity = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+        cartCount.textContent = totalQuantity;
     }
 }
 
