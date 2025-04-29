@@ -44,6 +44,15 @@
             <div class="contact-content flex">
                 <i class='bx bx-phone phone-icon'></i>
                 <span class="phone-number">0022-0303-2030</span>
+                <div class="cart-actions flex">
+                    <a href="order.html" class="cart-icon">
+                        <i class='bx bx-cart'></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="clear-cart-btn" title="Clear Cart">
+                        <i class='bx bx-trash'></i>
+                    </button>
+                </div>
             </div>
             <div class="cart-btn">
                 <a href="order.html" style="color: white;">
@@ -324,11 +333,11 @@
         </div>
         <div class="footer-copyRight">© 2025 Coffee Haven.. All rights reserved</div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/order.js"></script>
-    <!-- Scroll Up -->
-    <a href="#coffee" class="scrollUp-btn flex">
-        <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
-    </a>
 
     <!-- Swiper JS -->
     <script src="js/swiper-bundle.min.js"></script>
@@ -336,10 +345,12 @@
     <!-- Scroll Reveal -->
     <script src="js/scrollreveal.js"></script>
 
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <!-- Scroll Up -->
+    <a href="#coffee" class="scrollUp-btn flex">
+        <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
+    </a>
+
     <!-- Scroll to top on page load -->
-    
     <script>
         window.onload = function() {
             window.scrollTo(0, 0);
