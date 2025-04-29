@@ -136,3 +136,16 @@ elemntos.forEach(element=>{
     element.addEventListener("click", () =>{
         JSN(element)});
 })
+
+
+
+
+
+window.addEventListener('DOMContentLoaded', function() {
+    const cartContainer = document.querySelector('.cart-items');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p>Your cart is empty!</p>";
+      return;
+    }
