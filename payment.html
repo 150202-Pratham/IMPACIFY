@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Coffee Haven</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="icon" type="image/x-icon" href="./images/cup-of-drink.png">
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-card">
+            <div class="payment-header">
+                <h2>Payment Details</h2>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+            
+            <div class="payment-form">
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <div class="input-group">
+                        <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input type="text" placeholder="MM/YY" maxlength="5">
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" placeholder="123" maxlength="3">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Cardholder Name</label>
+                    <input type="text" placeholder="John Doe">
+                </div>
+                
+                <div class="payment-amount">
+                    <span>Total Amount</span>
+                    <span id="totalAmount">$0.00</span>
+                </div>
+                
+                <button class="pay-btn" id="payButton">
+                    <i class="fas fa-lock"></i>
+                    Pay Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get total amount from localStorage
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + 2; // Add $2 delivery fee
+        document.getElementById('totalAmount').textContent = `$${total.toFixed(2)}`;
+
+        // Handle payment button click
+        document.getElementById('payButton').addEventListener('click', function() {
+            // Show loading state
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            this.disabled = true;
+
+            // Simulate payment processing
+            setTimeout(() => {
+                // Clear cart
+                localStorage.removeItem('cart');
+                
+                // Show success message
+                alert('Payment successful! Thank you for your purchase.');
+                
+                // Redirect to menu page
+                window.location.href = 'Menu.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html> 

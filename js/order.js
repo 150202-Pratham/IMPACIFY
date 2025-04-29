@@ -194,3 +194,19 @@ menuCards.forEach(element => {
 window.updateCartCount = updateCartCount;
 window.displayCartItems = displayCartItems;
 
+// Form submission handler
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Clear cart
+    localStorage.removeItem('cart');
+    updateCartCount();
+    displayCartItems();
+    
+    // Show success message
+    alert('Order placed successfully! Thank you for your purchase.');
+    
+    // Reset form
+    this.reset();
+});
+
