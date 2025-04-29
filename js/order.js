@@ -85,7 +85,7 @@ const JSN = function htmlToJSON(element) {
             if (child.classList.contains("menu-card-content")) {
                 const titleElement = child.querySelector(".menu-card-title");
                 const priceElement = child.querySelector(".discount-price");
-                const imgElement = child.querySelector("img");
+                const imgElement = element.querySelector("img");
 
                 if (titleElement) {
                     obj.Item_Name = titleElement.innerHTML;
