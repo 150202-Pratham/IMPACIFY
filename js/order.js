@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Order page script loaded');
     
@@ -98,18 +97,31 @@ const JSN = function htmlToJSON(element) {
 
                 if (imgElement) {
                     obj.Item_Image = imgElement.getAttribute("src");
-                    console.log("Item Image:", obj.Item_Image);
                 }
             }
         }
     });
     
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push(obj);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    console.log("Cart Saved:", cart);
     
-  
+    // Check if item already exists in cart
+    const existingItemIndex = cart.findIndex(item => 
+        item.Item_Name === obj.Item_Name && 
+        item.Item_Price === obj.Item_Price
+    );
+    
+    if (existingItemIndex !== -1) {
+        // Item exists, update quantity
+        cart[existingItemIndex].quantity = (cart[existingItemIndex].quantity || 1) + 1;
+    } else {
+        // New item, add to cart with quantity 1
+        obj.quantity = 1;
+        cart.push(obj);
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Update cart count
     if (typeof window.updateCartCount === 'function') {
         window.updateCartCount();
     }
@@ -145,9 +157,9 @@ window.addEventListener('DOMContentLoaded', function() {
                 <h3>${item.Item_Name}</h3>
                 <p class="price">${item.Item_Price}</p>
                 <div class="quantity">
-                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
-                    <span class="qty-value">1</span>
-                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                    <button class="qty-btn minus" data-index="${index}"><i class="fas fa-minus"></i></button>
+                    <span class="qty-value">${item.quantity || 1}</span>
+                    <button class="qty-btn plus" data-index="${index}"><i class="fas fa-plus"></i></button>
                 </div>
                 <div class="customize-section">
                     <button class="customize-toggle">
@@ -211,64 +223,33 @@ window.addEventListener('DOMContentLoaded', function() {
         cartContainer.appendChild(cartItem);
     });
 
-    
-    function setupEventListeners() {
-       
-        const customizeToggles = document.querySelectorAll('.customize-toggle');
-        customizeToggles.forEach(toggle => {
-            toggle.addEventListener('click', function() {
-                const panel = this.nextElementSibling;
-                panel.classList.toggle('active');
-                
-                const icon = this.querySelector('i');
-                if (panel.classList.contains('active')) {
-                    icon.classList.remove('fa-sliders-h');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-sliders-h');
-                }
-            });
-        });
-
-        const shotCounters = document.querySelectorAll('.shots-counter');
-        shotCounters.forEach(counter => {
-            const minusBtn = counter.querySelector('.minus');
-            const plusBtn = counter.querySelector('.plus');
-            const countDisplay = counter.querySelector('span');
+    // Update quantity buttons functionality
+    const qtyButtons = document.querySelectorAll('.qty-btn');
+    qtyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const isPlus = this.classList.contains('plus');
+            const countSpan = this.parentElement.querySelector('span');
+            let count = parseInt(countSpan.textContent);
             
-            minusBtn.addEventListener('click', function() {
-                let count = parseInt(countDisplay.textContent);
-                if (count > 0) {
-                    countDisplay.textContent = count - 1;
-                }
-            });
+            if (isPlus) {
+                count++;
+                cart[index].quantity = count;
+            } else if (count > 1) {
+                count--;
+                cart[index].quantity = count;
+            } else {
+                // Remove item if quantity becomes 0
+                cart.splice(index, 1);
+                this.closest('.cart-item').remove();
+            }
             
-            plusBtn.addEventListener('click', function() {
-                let count = parseInt(countDisplay.textContent);
-                countDisplay.textContent = count + 1;
-            });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartTotals();
         });
-
-        
-        const qtyButtons = document.querySelectorAll('.qty-btn');
-        qtyButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const isPlus = this.querySelector('.fa-plus') !== null;
-                const countSpan = this.parentElement.querySelector('span');
-                let count = parseInt(countSpan.textContent);
-                
-                if (isPlus) {
-                    countSpan.textContent = count + 1;
-                } else if (count > 1) {
-                    countSpan.textContent = count - 1;
-                }
-            });
-        });
-    }
-
-   
-    setupEventListeners();
+    });
 });
 
 
