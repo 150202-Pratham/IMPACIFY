@@ -6,7 +6,11 @@
     <title>Coffee Order List</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS -->
     <link rel="stylesheet" href="css/order.css">
+    <link rel="icon" type="image/x-icon" href="./images/cup-of-drink.png">
 </head>
 <body>
     <!-- Simple Navbar -->
@@ -37,6 +41,9 @@
             <div class="cart-section">
                 <h2><i class="fas fa-shopping-basket"></i> Order Details</h2>
                 <div class="cart-items">
+
+                    <!-- Cart items will be dynamically inserted here -->
+
                     <!--<div class="cart-item">
                         <img src="https://via.placeholder.com/80" alt="Coffee 1">
                         <div class="item-details">
@@ -188,22 +195,31 @@
                             </div>
                         </div>
                     </div>-->
+
                 </div>
 
                 <div class="cart-summary">
                     <div class="summary-item">
                         <span><i class="fas fa-receipt"></i> Subtotal:</span>
-                        <span>$0.00</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-item">
+                 <span>$0.00</span>
                       </div>
                       <div class="summary-item">
+
                         <span><i class="fas fa-truck"></i> Delivery:</span>
                         <span>$2.00</span>
                       </div>
                       <div class="summary-item total">
                         <span><i class="fas fa-dollar-sign"></i> Total:</span>
-                        <span>$2.00</span>
+
+                        <span id="total">$2.00</span>
+                    </div>
+                <span>$2.00</span>
                       </div>
                       
+
                 </div>
             </div>
 
@@ -258,6 +274,69 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="section footer">
+        <div class="footer-container container">
+            <div class="footer-content">
+                <a href="index.html" class="logo-content flex">
+                    <i class='bx bx-coffee logo-icon'></i>
+                    <span class="logo-text">Coffee.</span>
+                </a>
+                <p class="content-description">Coffee is a cafe that serves many variants of coffee and other dishes with a very comfortable place.</p>
+                <div class="footer-location flex">
+                    <i class='bx bx-map map-icon'></i>
+                    <div class="location-text">USA California 65 South Fifth St. Sicklerville, NJ 08081</div>
+                </div>
+            </div>
+            <div class="footer-linkContent">
+                <ul class="footer-links">
+                    <h4 class="footerLinks-title">Facility</h4>
+                    <li><a href="#" class="footer-link">Private Room</a></li>
+                    <li><a href="#" class="footer-link">Meeting Room</a></li>
+                    <li><a href="#" class="footer-link">Event Room</a></li>
+                    <li><a href="#" class="footer-link">Creative Studio</a></li>
+                    <li><a href="#" class="footer-link">Custom Room</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <h4 class="footerLinks-title">Menu</h4>
+                    <li><a href="menu.html#coffee" class="footer-link">Coffee</a></li>
+                    <li><a href="menu.html#beverages" class="footer-link">Beverages</a></li>
+                    <li><a href="menu.html#dishes" class="footer-link">Dishes</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <h4 class="footerLinks-title">Support</h4>
+                    <li><a href="#" class="footer-link">About Us</a></li>
+                    <li><a href="#" class="footer-link">FAQs</a></li>
+                    <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer-link">Help Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyRight">© CodingLab. All rights reserved</div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/order.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <!-- Scroll Reveal -->
+    <script src="js/scrollreveal.js"></script>
+
+    <!-- Scroll Up -->
+    <a href="#top" class="scrollUp-btn flex">
+        <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
+    </a>
+
+    <!-- Scroll to top on page load -->
+    <script>
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+    </script>
 </body>
 </html> 

@@ -148,3 +148,43 @@
         padding: 1.2rem 1.5rem;
     }
 }
+
+
+/* Follow Us Section Styling */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.contact-info .content-subtitle {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #C87E4F;
+}
+
+.media-icons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.media-icons a {
+  font-size: 2.8rem; /* Bigger icons */
+  color: #C87E4F;
+  transition: color 0.3s;
+}
+
+.media-icons a:hover {
+  color: #C2703D; /* Slightly darker on hover */
+}
+
+/* Optional: Center Follow Us on smaller screens */
+@media screen and (max-width: 600px) {
+  .contact-info {
+      align-items: center;
+      text-align: center;
+  }
+}

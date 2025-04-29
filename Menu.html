@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Coffee Havan</title>
+    <title>Menu - Coffee Haven</title>
 
     <!-- Swiper JS CSS -->
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
@@ -15,6 +15,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="icon" type="image/x-icon" href="./images/cup-of-drink.png">
 </head>
 <body>
     <!-- Header -->
@@ -22,7 +23,7 @@
         <nav class="nav container flex">
             <a href="index.html" class="logo-content flex">
                 <i class='bx bx-coffee logo-icon'></i>
-                <span class="logo-text">Coffee Havan</span>
+                <span class="logo-text">Coffee Haven</span>
             </a>
             <div class="menu-content">
                 <ul class="menu-list flex">
@@ -43,6 +44,15 @@
             <div class="contact-content flex">
                 <i class='bx bx-phone phone-icon'></i>
                 <span class="phone-number">0022-0303-2030</span>
+                <div class="cart-actions flex">
+                    <a href="order.html" class="cart-icon">
+                        <i class='bx bx-cart'></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="clear-cart-btn" title="Clear Cart">
+                        <i class='bx bx-trash'></i>
+                    </button>
+                </div>
             </div>
             <div class="cart-btn">
                 <a href="order.html" style="color: white;">
@@ -321,13 +331,13 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-copyRight">© CodingLab. All rights reserved</div>
+        <div class="footer-copyRight">© 2025 Coffee Haven.. All rights reserved</div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/order.js"></script>
-    <!-- Scroll Up -->
-    <a href="#coffee" class="scrollUp-btn flex">
-        <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
-    </a>
 
     <!-- Swiper JS -->
     <script src="js/swiper-bundle.min.js"></script>
@@ -335,10 +345,12 @@
     <!-- Scroll Reveal -->
     <script src="js/scrollreveal.js"></script>
 
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <!-- Scroll Up -->
+    <a href="#coffee" class="scrollUp-btn flex">
+        <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
+    </a>
+
     <!-- Scroll to top on page load -->
-    
     <script>
         window.onload = function() {
             window.scrollTo(0, 0);
