@@ -96,9 +96,9 @@ const JSN = function htmlToJSON(element) {
                 }
 
                 if (imgElement) {
-                    // Get the full path of the image
+                   
                     const imgPath = imgElement.getAttribute("src");
-                    // Store the full path in the cart
+                   
                     obj.Item_Image = imgPath;
                     console.log("Image path stored:", obj.Item_Image);
                 }
@@ -108,24 +108,24 @@ const JSN = function htmlToJSON(element) {
     
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // Check if item already exists in cart
+    
     const existingItemIndex = cart.findIndex(item => 
         item.Item_Name === obj.Item_Name && 
         item.Item_Price === obj.Item_Price
     );
     
     if (existingItemIndex !== -1) {
-        // Item exists, update quantity
+     
         cart[existingItemIndex].quantity = (cart[existingItemIndex].quantity || 1) + 1;
     } else {
-        // New item, add to cart with quantity 1
+
         obj.quantity = 1;
         cart.push(obj);
     }
     
     localStorage.setItem('cart', JSON.stringify(cart));
     
-    // Update cart count
+   
     if (typeof window.updateCartCount === 'function') {
         window.updateCartCount();
     }
@@ -156,7 +156,7 @@ window.addEventListener('DOMContentLoaded', function() {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
         
-        // Ensure the image path is correct
+       
         const imgPath = item.Item_Image.startsWith('http') ? 
             item.Item_Image : 
             (item.Item_Image.startsWith('/') ? item.Item_Image : '/' + item.Item_Image);
@@ -233,7 +233,7 @@ window.addEventListener('DOMContentLoaded', function() {
         cartContainer.appendChild(cartItem);
     });
 
-    // Update quantity buttons functionality
+    
     const qtyButtons = document.querySelectorAll('.qty-btn');
     qtyButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -250,7 +250,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 count--;
                 cart[index].quantity = count;
             } else {
-                // Remove item if quantity becomes 0
+             
                 cart.splice(index, 1);
                 this.closest('.cart-item').remove();
             }
