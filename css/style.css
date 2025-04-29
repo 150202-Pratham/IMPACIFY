@@ -100,6 +100,14 @@ input{
   color: var(--text-color);
 }
 
+/* Login Button Styling */
+.button-login{
+  font-family: var(--body-font);
+  font-size: var(--normal-font);
+  font-weight: var(--font-regular);
+  color: white;
+}
+
 input{
   outline: none;
 }
