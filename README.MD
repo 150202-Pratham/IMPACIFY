@@ -40,3 +40,11 @@ It blends a smooth user experience with an impact-driven mission, promoting sust
 - **Backend**: Node.js, Express.js
 - **Database**: JSON file (orders.json)
 - **Version Control**: Git & GitHub
+
+## 👥 Collaborators
+- Pratham (Team Lead)
+- Satyam Godara
+- Pulkit Sachdeva
+- Dhruvi
+- Sukhrattan
+
