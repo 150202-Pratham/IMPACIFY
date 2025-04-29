@@ -145,23 +145,31 @@ elemntos.forEach(element=>{
 window.addEventListener('DOMContentLoaded', function() {
     const cartContainer = document.querySelector('.cart-items');
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
+    
     if (cart.length === 0) {
-      cartContainer.innerHTML = "<p>Your cart is empty!</p>";
-      return;
+        cartContainer.innerHTML = "<p>Your cart is empty!</p>";
+        return;
     }
-    cartItem.innerHTML = `
-    <img src="${item.Item_Image}" alt="${item.Item_Name}">
-    <div class="item-details">
-      <h3>${item.Item_Name}</h3>
-      <p class="price">${item.Item_Price}</p>
-      <div class="quantity">
-        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
-        <span class="qty-value">1</span>
-        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
-      </div>
-    </div>
-  `;
 
-  cartContainer.appendChild(cartItem);
+    // Clear any existing content
+    cartContainer.innerHTML = '';
+
+    // Create and append cart items
+    cart.forEach(item => {
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <img src="${item.Item_Image}" alt="${item.Item_Name}">
+            <div class="item-details">
+                <h3>${item.Item_Name}</h3>
+                <p class="price">${item.Item_Price}</p>
+                <div class="quantity">
+                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+        `;
+        cartContainer.appendChild(cartItem);
+    });
 });
