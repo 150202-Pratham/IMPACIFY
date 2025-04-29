@@ -30,248 +30,125 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="page-header">
-            <h1><i class="fas fa-mug-hot"></i> Your Coffee Order</h1>
-            <p class="subtitle">Review your order and provide delivery details</p>
+    <main class="order-page">
+        <div class="container">
+            <h1>Order Details</h1>
+            <div class="order-layout">
+                <div class="order-details">
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Delivery Address</label>
+                            <textarea id="address" name="address" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">Pincode</label>
+                            <input type="text" id="pincode" name="pincode" required pattern="[0-9]{6}" title="Please enter a valid 6-digit pincode">
+                        </div>
+                        <a href="payment.html" class="submit-btn">Proceed to Payment</a>
+                    </form>
+                </div>
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="cart-items">
+                        <!-- Cart items will be displayed here -->
+                    </div>
+                    <div class="summary-details">
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span>$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Delivery Fee</span>
+                            <span>$2.00</span>
+                        </div>
+                        <div class="total">
+                            <span>Total</span>
+                            <span>$2.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="order-container">
-            <!-- Left Column - Cart Items -->
-            <div class="cart-section">
-                <h2><i class="fas fa-shopping-basket"></i> Order Details</h2>
-                <div class="cart-items">
+    </main>
 
-                    <!-- Cart items will be dynamically inserted here -->
-
-                    <!--<div class="cart-item">
-                        <img src="https://via.placeholder.com/80" alt="Coffee 1">
-                        <div class="item-details">
-                            <h3>Espresso</h3>
-                            <p><i class="fas fa-cup"></i> Size: Medium</p>
-                            <p class="price"><i class="fas fa-tag"></i> $4.99</p>
-                            <div class="quantity">
-                                <button class="qty-btn"><i class="fas fa-minus"></i></button>
-                                <span>1</span>
-                                <button class="qty-btn"><i class="fas fa-plus"></i></button>
-                            </div>
-                            <div class="customize-section">
-                                <button class="customize-toggle">
-                                    <i class="fas fa-sliders-h"></i>
-                                    Customize Drink
-                                </button>
-                                <div class="customization-panel">
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-temperature-high"></i> Temperature</label>
-                                        <div class="option-choices">
-                                            <input type="radio" id="hot1" name="temp1" value="hot" checked>
-                                            <label for="hot1">Hot</label>
-                                            <input type="radio" id="iced1" name="temp1" value="iced">
-                                            <label for="iced1">Iced</label>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-coffee"></i> Strength</label>
-                                        <select class="strength-select">
-                                            <option value="regular">Regular</option>
-                                            <option value="strong">Strong</option>
-                                            <option value="extra-strong">Extra Strong</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-glass-whiskey"></i> Size</label>
-                                        <select class="size-select">
-                                            <option value="small">Small (8 oz)</option>
-                                            <option value="medium" selected>Medium (12 oz)</option>
-                                            <option value="large">Large (16 oz)</option>
-                                            <option value="extra-large">Extra Large (20 oz)</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-tint"></i> Milk Options</label>
-                                        <select class="milk-select">
-                                            <option value="whole">Whole Milk</option>
-                                            <option value="skim">Skim Milk</option>
-                                            <option value="oat">Oat Milk (+$0.50)</option>
-                                            <option value="almond">Almond Milk (+$0.50)</option>
-                                            <option value="soy">Soy Milk (+$0.50)</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-plus-circle"></i> Extra Shots</label>
-                                        <div class="shots-counter">
-                                            <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
-                                            <span>0</span>
-                                            <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
-                                            <span class="price-note">(+$0.75/shot)</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-comment"></i> Special Instructions</label>
-                                        <textarea placeholder="Any special requests? (Extra hot, light ice, etc.)"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Customization Modal -->
+    <div class="customization-modal" id="customizationModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Customize Your Drink</h2>
+            <div class="customization-options">
+                <div class="custom-option">
+                    <label><i class="fas fa-temperature-high"></i> Temperature</label>
+                    <div class="option-choices">
+                        <input type="radio" id="hot" name="temperature" value="hot" checked>
+                        <label for="hot">Hot</label>
+                        <input type="radio" id="iced" name="temperature" value="iced">
+                        <label for="iced">Iced</label>
                     </div>
-
-                    <div class="cart-item">
-                        <img src="https://via.placeholder.com/80" alt="Coffee 2">
-                        <div class="item-details">
-                            <h3>Cappuccino</h3>
-                            <p><i class="fas fa-cup"></i> Size: Large</p>
-                            <p class="price"><i class="fas fa-tag"></i> $5.99</p>
-                            <div class="quantity">
-                                <button class="qty-btn"><i class="fas fa-minus"></i></button>
-                                <span>2</span>
-                                <button class="qty-btn"><i class="fas fa-plus"></i></button>
-                            </div>
-                            <div class="customize-section">
-                                <button class="customize-toggle">
-                                    <i class="fas fa-sliders-h"></i>
-                                    Customize Drink
-                                </button>
-                                <div class="customization-panel">
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-temperature-high"></i> Temperature</label>
-                                        <div class="option-choices">
-                                            <input type="radio" id="hot2" name="temp2" value="hot" checked>
-                                            <label for="hot2">Hot</label>
-                                            <input type="radio" id="iced2" name="temp2" value="iced">
-                                            <label for="iced2">Iced</label>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-coffee"></i> Strength</label>
-                                        <select class="strength-select">
-                                            <option value="regular">Regular</option>
-                                            <option value="strong">Strong</option>
-                                            <option value="extra-strong">Extra Strong</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-glass-whiskey"></i> Size</label>
-                                        <select class="size-select">
-                                            <option value="small">Small (8 oz)</option>
-                                            <option value="medium" selected>Medium (12 oz)</option>
-                                            <option value="large">Large (16 oz)</option>
-                                            <option value="extra-large">Extra Large (20 oz)</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-tint"></i> Milk Options</label>
-                                        <select class="milk-select">
-                                            <option value="whole">Whole Milk</option>
-                                            <option value="skim">Skim Milk</option>
-                                            <option value="oat">Oat Milk (+$0.50)</option>
-                                            <option value="almond">Almond Milk (+$0.50)</option>
-                                            <option value="soy">Soy Milk (+$0.50)</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-plus-circle"></i> Extra Shots</label>
-                                        <div class="shots-counter">
-                                            <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
-                                            <span>0</span>
-                                            <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
-                                            <span class="price-note">(+$0.75/shot)</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="custom-option">
-                                        <label><i class="fas fa-comment"></i> Special Instructions</label>
-                                        <textarea placeholder="Any special requests? (Extra hot, light ice, etc.)"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
-
+                </div>
+                
+                <div class="custom-option">
+                    <label><i class="fas fa-coffee"></i> Strength</label>
+                    <select class="strength-select">
+                        <option value="regular">Regular</option>
+                        <option value="strong">Strong</option>
+                        <option value="extra-strong">Extra Strong</option>
+                    </select>
                 </div>
 
-                <div class="cart-summary">
-                    <div class="summary-item">
-                        <span><i class="fas fa-receipt"></i> Subtotal:</span>
-                        <span id="subtotal">$0.00</span>
+                <div class="custom-option">
+                    <label><i class="fas fa-glass-whiskey"></i> Size</label>
+                    <select class="size-select">
+                        <option value="small">Small (8 oz)</option>
+                        <option value="medium" selected>Medium (12 oz)</option>
+                        <option value="large">Large (16 oz)</option>
+                        <option value="extra-large">Extra Large (20 oz)</option>
+                    </select>
+                </div>
+
+                <div class="custom-option">
+                    <label><i class="fas fa-tint"></i> Milk Options</label>
+                    <select class="milk-select">
+                        <option value="whole">Whole Milk</option>
+                        <option value="skim">Skim Milk</option>
+                        <option value="oat">Oat Milk (+$0.50)</option>
+                        <option value="almond">Almond Milk (+$0.50)</option>
+                        <option value="soy">Soy Milk (+$0.50)</option>
+                    </select>
+                </div>
+
+                <div class="custom-option">
+                    <label><i class="fas fa-plus-circle"></i> Extra Shots</label>
+                    <div class="shots-counter">
+                        <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                        <span>0</span>
+                        <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                        <span class="price-note">(+$0.75/shot)</span>
                     </div>
-                    <div class="summary-item">
-                 <span>$0.00</span>
-                      </div>
-                      <div class="summary-item">
+                </div>
 
-                        <span><i class="fas fa-truck"></i> Delivery:</span>
-                        <span>$2.00</span>
-                      </div>
-                      <div class="summary-item total">
-                        <span><i class="fas fa-dollar-sign"></i> Total:</span>
-
-                        <span id="total">$2.00</span>
-                    </div>
-                <span>$2.00</span>
-                      </div>
-                      
-
+                <div class="custom-option">
+                    <label><i class="fas fa-comment"></i> Special Instructions</label>
+                    <textarea placeholder="Any special requests? (Extra hot, light ice, etc.)"></textarea>
                 </div>
             </div>
-
-            <!-- Right Column - User Details -->
-            <div class="user-details-section">
-                <h2><i class="fas fa-map-marker-alt"></i> Delivery Details</h2>
-                <form class="user-form">
-                    <div class="form-group name-group">
-                        <div class="name-field">
-                            <label for="firstName"><i class="fas fa-user"></i> First Name</label>
-                            <input type="text" id="firstName" placeholder="Enter your first name" required>
-                        </div>
-                        <div class="name-field">
-                            <label for="lastName"><i class="fas fa-user"></i> Last Name</label>
-                            <input type="text" id="lastName" placeholder="Enter your last name" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group phone-group">
-                        <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
-                        <div class="phone-input">
-                            <select id="countryCode" class="country-code">
-                                <option value="+91" selected>🇮🇳 +91</option>
-                                <option value="+1">🇺🇸 +1</option>
-                                <option value="+44">🇬🇧 +44</option>
-                                <option value="+81">🇯🇵 +81</option>
-                                <option value="+86">🇨🇳 +86</option>
-                                <option value="+49">🇩🇪 +49</option>
-                                <option value="+33">🇫🇷 +33</option>
-                                <option value="+61">🇦🇺 +61</option>
-                                <option value="+55">🇧🇷 +55</option>
-                                <option value="+7">🇷🇺 +7</option>
-                            </select>
-                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pincode"><i class="fas fa-map-pin"></i> PIN Code</label>
-                        <input type="text" id="pincode" placeholder="Enter your PIN code" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address"><i class="fas fa-home"></i> Delivery Address</label>
-                        <textarea id="address" rows="4" placeholder="Enter your complete delivery address" required></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-check"></i> Place Order
-                    </button>
-                </form>
-            </div>
+            <button class="save-customization-btn">Save Customization</button>
         </div>
     </div>
 
