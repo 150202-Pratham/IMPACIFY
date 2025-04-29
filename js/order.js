@@ -1,8 +1,8 @@
-// Order page functionality
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Order page script loaded');
     
-    // Mobile menu toggle
+    
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Drink customization toggle
+   
     const customizeToggles = document.querySelectorAll('.customize-toggle');
     console.log('Found customize toggles:', customizeToggles.length);
     
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const panel = this.nextElementSibling;
             panel.classList.toggle('active');
             
-            // Update button icon
+            
             const icon = this.querySelector('i');
             if (panel.classList.contains('active')) {
                 icon.classList.remove('fa-sliders-h');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Extra shots counter
+    
     const shotCounters = document.querySelectorAll('.shots-counter');
     console.log('Found shot counters:', shotCounters.length);
     
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Quantity buttons
+
     const qtyButtons = document.querySelectorAll('.qty-btn');
     
     qtyButtons.forEach(button => {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 }); 
 
-// Function to convert menu card to JSON and add to cart
+
 const JSN = function htmlToJSON(element) {
     let children = element.children;
     const obj = {}; 
@@ -109,13 +109,13 @@ const JSN = function htmlToJSON(element) {
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log("Cart Saved:", cart);
     
-    // Update cart count in header
+  
     if (typeof window.updateCartCount === 'function') {
         window.updateCartCount();
     }
 }
 
-// Add click event listeners to menu cards
+
 const menuCards = document.querySelectorAll(".menu-card");
 menuCards.forEach(element => {
     element.addEventListener("click", () => {
@@ -132,10 +132,10 @@ window.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Clear any existing content
+   
     cartContainer.innerHTML = '';
 
-    // Create and append cart items
+ 
     cart.forEach((item, index) => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
@@ -211,9 +211,9 @@ window.addEventListener('DOMContentLoaded', function() {
         cartContainer.appendChild(cartItem);
     });
 
-    // Add event listeners for all interactive elements
+    
     function setupEventListeners() {
-        // Customize toggle buttons
+       
         const customizeToggles = document.querySelectorAll('.customize-toggle');
         customizeToggles.forEach(toggle => {
             toggle.addEventListener('click', function() {
@@ -231,7 +231,6 @@ window.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Extra shots counter
         const shotCounters = document.querySelectorAll('.shots-counter');
         shotCounters.forEach(counter => {
             const minusBtn = counter.querySelector('.minus');
@@ -251,7 +250,7 @@ window.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Quantity buttons
+        
         const qtyButtons = document.querySelectorAll('.qty-btn');
         qtyButtons.forEach(button => {
             button.addEventListener('click', function() {
@@ -268,11 +267,11 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Setup event listeners after cart items are created
+   
     setupEventListeners();
 });
 
-// Function to calculate and update cart totals
+
 function updateCartTotals() {
     const cartItems = document.querySelectorAll('.cart-item');
     let subtotal = 0;
@@ -285,7 +284,7 @@ function updateCartTotals() {
             const price = parseFloat(priceText.replace(/[^0-9.]/g, '')) || 0;
             subtotal += price * quantity;
 
-            // Add extra charges for milk options
+
             const milkSelect = item.querySelector('.milk-select');
             if (milkSelect) {
                 const selectedMilk = milkSelect.value;
@@ -294,7 +293,6 @@ function updateCartTotals() {
                 }
             }
 
-            // Add extra charges for shots
             const shotsCount = parseInt(item.querySelector('.shots-counter span').textContent) || 0;
             subtotal += 0.75 * shotsCount * quantity;
         } catch (error) {
@@ -302,7 +300,7 @@ function updateCartTotals() {
         }
     });
 
-    // Update the summary section
+
     const subtotalElement = document.querySelector('.summary-item:first-child span:last-child');
     const totalElement = document.querySelector('.summary-item.total span:last-child');
     
@@ -312,11 +310,11 @@ function updateCartTotals() {
     }
 }
 
-// Modify the quantity button click handler to update totals
-function setupEventListeners() {
-    // ... existing event listeners ...
 
-    // Quantity buttons
+function setupEventListeners() {
+ 
+
+   
     const qtyButtons = document.querySelectorAll('.qty-btn');
     qtyButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -333,7 +331,6 @@ function setupEventListeners() {
         });
     });
 
-    // Extra shots counter
     const shotCounters = document.querySelectorAll('.shots-counter');
     shotCounters.forEach(counter => {
         const minusBtn = counter.querySelector('.minus');
@@ -355,7 +352,6 @@ function setupEventListeners() {
         });
     });
 
-    // Milk options change
     const milkSelects = document.querySelectorAll('.milk-select');
     milkSelects.forEach(select => {
         select.addEventListener('change', function() {
@@ -364,13 +360,13 @@ function setupEventListeners() {
     });
 }
 
-// Initialize totals when page loads
+
 document.addEventListener('DOMContentLoaded', function() {
-    // ... existing initialization code ...
+
     
-    // Setup event listeners after cart items are created
+
     setupEventListeners();
     
-    // Calculate initial totals
+
     updateCartTotals();
 });
