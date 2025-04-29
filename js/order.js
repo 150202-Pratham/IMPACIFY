@@ -96,7 +96,11 @@ const JSN = function htmlToJSON(element) {
                 }
 
                 if (imgElement) {
-                    obj.Item_Image = imgElement.getAttribute("src");
+                    // Get the full path of the image
+                    const imgPath = imgElement.getAttribute("src");
+                    // Store the full path in the cart
+                    obj.Item_Image = imgPath;
+                    console.log("Image path stored:", obj.Item_Image);
                 }
             }
         }
@@ -151,8 +155,14 @@ window.addEventListener('DOMContentLoaded', function() {
     cart.forEach((item, index) => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
+        
+        // Ensure the image path is correct
+        const imgPath = item.Item_Image.startsWith('http') ? 
+            item.Item_Image : 
+            (item.Item_Image.startsWith('/') ? item.Item_Image : '/' + item.Item_Image);
+            
         cartItem.innerHTML = `
-            <img src="${item.Item_Image}" alt="${item.Item_Name}">
+            <img src="${imgPath}" alt="${item.Item_Name}" onerror="this.onerror=null; this.src='images/default-coffee.jpg'">
             <div class="item-details">
                 <h3>${item.Item_Name}</h3>
                 <p class="price">${item.Item_Price}</p>
